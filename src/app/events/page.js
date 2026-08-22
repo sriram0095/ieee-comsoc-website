@@ -73,11 +73,6 @@ export default function EventsPage() {
     return event.status === activeTab;
   });
 
-  const getTabCount = (status) => {
-    if (status === "all") return MOCK_EVENTS.length;
-    return MOCK_EVENTS.filter((e) => e.status === status).length;
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Header */}
@@ -95,33 +90,23 @@ export default function EventsPage() {
         <div className="inline-flex p-1.5 rounded-xl bg-slate-900 border border-slate-800 gap-1 sm:gap-2">
           {[
             { id: "all", label: "All Events" },
-            { id: "live", label: "🔴 Live", alert: true },
+            { id: "live", label: "Live" },
             { id: "upcoming", label: "Upcoming" },
             { id: "completed", label: "Completed" },
           ].map((tab) => {
-            const count = getTabCount(tab.id);
             const isActive = activeTab === tab.id;
 
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-3 sm:px-5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+                className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
                   isActive
                     ? "bg-cyan-400 text-[#001529] shadow-md shadow-cyan-500/20"
                     : "text-slate-400 hover:text-white hover:bg-slate-800/60"
                 }`}
               >
-                <span>{tab.label}</span>
-                <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                    isActive
-                      ? "bg-[#001529]/20 text-[#001529]"
-                      : "bg-slate-800 text-slate-400"
-                  }`}
-                >
-                  {count}
-                </span>
+                {tab.label}
               </button>
             );
           })}

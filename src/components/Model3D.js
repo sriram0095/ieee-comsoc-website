@@ -1,24 +1,49 @@
-export default function Model3D() {
-  const EMBED_URL =
-    "https://sketchfab.com/models/fc2cc9a2fa9249e888feba705301c0e2/embed?autostart=1&transparent=1&ui_theme=dark";
+"use client";
 
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useRef, Suspense } from "react";
+
+// This component loads your local .glb file and spins it 360 degrees
+function ActualModel() {
+  const modelRef = useRef();
+  
+  // Point this to your local file inside the public folder (e.g., public/telescope.glb)
+  const { scene } = useGLTF("/telescope.glb"); 
+
+  // Smooth 360-degree continuous rotation every frame
+  useFrame((_, delta) => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += delta * 0.4;
+    }
+  });
+
+  return <primitive ref={modelRef} object={scene} scale={2.5} position={[0, 0.3, 0]} />;
+}
+
+export default function Model3D() {
   return (
-    // The container background is set to transparent so it matches the homepage perfectly
-    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl overflow-hidden border border-cyan-500/30 bg-transparent shadow-2xl shadow-cyan-500/10 flex items-center justify-center">
+    <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[420px] flex items-center justify-center bg-transparent">
       
-      <iframe
-        title="IEEE ComSoc 3D Radio Telescope Model"
-        // CSS TRICK: 
-        // 1. invert: Turns the white background black
-        // 2. hue-rotate-180: Restores the original color hues
-        // 3. mix-blend-screen: Makes the new black background completely transparent
-        // 4. opacity-90: Blends the model slightly into the dark theme
-        className="absolute top-[-12%] left-[-10%] w-[120%] h-[125%] border-0 invert hue-rotate-180 mix-blend-screen opacity-90 contrast-125"
-        src={EMBED_URL}
-        allow="autoplay; fullscreen; vr"
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true"
-      ></iframe>
+      {/* Background glow */}
+      <div className="absolute w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      {/* Canvas renders the 3D space natively inside your website */}
+      <Canvas
+        className="w-full h-full cursor-grab active:cursor-grabbing"
+        camera={{ position: [0, 1.5, 4], fov: 45 }}
+        gl={{ alpha: true }}
+      >
+        {/* Soft lighting to make it look clean and professional */}
+        <ambientLight intensity={1.2} />
+        <directionalLight position={[5, 10, 5]} intensity={2} />
+
+        <Suspense fallback={null}>
+          <ActualModel />
+        </Suspense>
+
+        <OrbitControls enableZoom={false} enablePan={false} />
+      </Canvas>
       
     </div>
   );
