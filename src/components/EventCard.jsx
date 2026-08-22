@@ -32,7 +32,7 @@ export default function EventCard({ event }) {
           {isLive ? (
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-600 text-white tracking-wide animate-pulse">
               <span className="w-2 h-2 rounded-full bg-white"></span>
-              🔴 LIVE NOW
+              LIVE NOW
             </span>
           ) : (
             <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-950/80 text-cyan-400 border border-cyan-500/30 capitalize">

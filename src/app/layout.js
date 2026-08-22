@@ -1,17 +1,17 @@
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata = {
-  title: "IEEE Communications Society Chapter",
-  description: "Official Website for IEEE ComSoc Student Branch Chapter",
+  title: "IEEE ComSoc Student Chapter",
+  description: "Advancing Communication Technology",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#000d1a] text-slate-100 flex flex-col min-h-screen">
-        <Header />
+      <body className="min-h-screen flex flex-col bg-[#020611] text-[#f1f5f9]">
+        <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>

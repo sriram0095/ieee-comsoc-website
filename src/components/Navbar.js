@@ -1,0 +1,64 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Events", href: "/events" },
+    { name: "Team", href: "/team" },
+    { name: "Join Us", href: "/join-us" },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-[#020611]/80 border-b border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        {/* Logo / Brand */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <span className="text-xl font-extrabold text-white tracking-wider">
+            IEEE <span className="text-[#1D63B8]">ComSoc</span>
+          </span>
+        </Link>
+
+        {/* Navigation Links with Hover Effects */}
+        <nav className="hidden md:flex items-center gap-2">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg group ${
+                  isActive
+                    ? "text-blue-400 bg-slate-800/50"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+                }`}
+              >
+                {link.name}
+                {/* Subtle bottom glowing indicator line on hover */}
+                <span className="absolute bottom-1 left-4 right-4 h-[2px] bg-[#1D63B8] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right CTA Button */}
+        <div>
+          <Link
+            href="/join-us"
+            className="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-[#1D63B8] hover:bg-[#154c8c] rounded-lg shadow-md shadow-blue-500/20 transition-all hover:-translate-y-0.5"
+          >
+            Join Chapter
+          </Link>
+        </div>
+
+      </div>
+    </header>
+  );
+}

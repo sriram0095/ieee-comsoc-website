@@ -3,48 +3,89 @@ import Model3D from "@/components/Model3D";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-20 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
       
-      {/* Hero Section with 3D Model */}
-      <section className="relative pt-10 lg:pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Hero Section */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Left Column: Title & CTA */}
+        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D63B8]/10 border border-[#1D63B8]/30 text-blue-400 text-xs font-semibold">
+            IEEE Communications Society Student Branch Chapter
+          </div>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            Advancing Technology for a <span className="text-[#1D63B8]">Connected World</span>
+          </h1>
+          <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Empowering the next generation of engineers with hands-on expertise in wireless communications, 5G/6G architectures, and advanced networking systems.
+          </p>
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <Link
+              href="/events"
+              className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#1D63B8] hover:bg-[#154c8c] rounded-xl shadow-lg shadow-blue-500/20 transition-all hover:-translate-y-0.5"
+            >
+              Explore Events
+            </Link>
+            <Link
+              href="/about"
+              className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300 bg-slate-900 border border-slate-800 hover:border-slate-700 hover:text-white rounded-xl transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Column: 3D Model Embed */}
+        <div className="lg:col-span-5 w-full">
+          <Model3D />
+        </div>
+
+      </section>
+
+      {/* What We Offer Section */}
+      <section className="space-y-12">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-3">
+            What We <span className="text-[#1D63B8]">Offer</span>
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base">
+            Discover the pathways and platforms we provide to bridge academic concepts with real-world industry experience.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Left Column: Heading & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              IEEE Communications Society
+          {/* Card 1 */}
+          <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
+            <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              📡
             </div>
-
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-              CONNECTING IDEAS. <br />
-              <span className="text-cyan-400">ENABLING INNOVATION.</span> <br />
-              ADVANCING COMMUNICATION.
-            </h1>
-
-            <p className="text-slate-300 text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
-              Empowering students to explore, innovate, and contribute to the evolving world of modern communication technology, wireless systems, and global connectivity.
+            <h3 className="text-xl font-bold text-white mb-3">Technical Workshops</h3>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Gain practical, hands-on experience with hardware simulators, software-defined radios, antenna prototyping, and next-gen wireless standards.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Link
-                href="/events"
-                className="px-6 py-3 text-sm font-semibold text-[#001529] bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-all shadow-lg shadow-cyan-500/20 text-center"
-              >
-                Explore Events
-              </Link>
-              <Link
-                href="/join"
-                className="px-6 py-3 text-sm font-semibold text-slate-200 bg-slate-900 border border-slate-700 hover:border-cyan-500/50 rounded-lg transition-all text-center"
-              >
-                Join Chapter
-              </Link>
-            </div>
           </div>
 
-          {/* Right Column: 3D Model Embed */}
-          <div className="lg:col-span-5 w-full">
-            <Model3D />
+          {/* Card 2 */}
+          <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
+            <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              🎤
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Expert Talks & Webinars</h3>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Interact directly with IEEE Distinguished Lecturers, industry researchers, and senior professionals leading telecom innovations globally.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
+            <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              🚀
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">Research & Hackathons</h3>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Collaborate on peer groups, participate in networking hackathons, and receive mentorship for technical paper writing and publications.
+            </p>
           </div>
 
         </div>
