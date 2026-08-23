@@ -60,7 +60,7 @@ export default function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} IEEE Communications Society Student Chapter. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} IEEE ComSoc  Student Branch Chapter GNU. All rights reserved.</p>
           <div className="flex gap-6 mt-4 sm:mt-0">
             <span className="hover:text-slate-400 transition-colors cursor-pointer">Privacy Policy</span>
             <span className="hover:text-slate-400 transition-colors cursor-pointer">Terms of Service</span>
