@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useRef, Suspense } from "react";
 
@@ -8,12 +8,7 @@ function ActualModel() {
   const modelRef = useRef();
   const { scene } = useGLTF("/telescope.glb"); 
 
-  useFrame((_, delta) => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.4;
-    }
-  });
-
+  // Continuous useFrame rotation loop removed for optimal performance!
   return <primitive ref={modelRef} object={scene} scale={1.8} position={[0, 0.3, 0]} />;
 }
 
@@ -26,7 +21,6 @@ export default function Model3D() {
       <Canvas
         className="w-full h-full cursor-grab active:cursor-grabbing"
         camera={{ position: [0, 1.5, 3.2], fov: 45 }}
-        // Added safe WebGL context handling attributes to prevent crashes on hot reload
         gl={{ alpha: true, powerPreference: "default" }}
         onCreated={({ gl }) => {
           gl.domElement.addEventListener("webglcontextlost", (e) => {

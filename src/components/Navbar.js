@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -18,11 +19,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[#020611]/80 border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Logo / Brand */}
+        {/* Logo / Brand Replacement */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-xl font-extrabold text-white tracking-wider">
-            IEEE <span className="text-[#1D63B8]">ComSoc</span>
-          </span>
+          <Image
+            src="/logo.png" 
+            alt="IEEE ComSoc Logo"
+            width={140}
+            height={40}
+            className="h-18 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Navigation Links with Hover Effects */}

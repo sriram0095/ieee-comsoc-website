@@ -15,23 +15,23 @@ const FACULTY_ADVISOR = {
 
 const EXECUTIVE_COMMITTEE = [
   {
-    name: "[Student Name]",
-    role: "Chairperson",
+    name: "T.V.Sai Charan",
+    role: "Chair",
     department: "ECE",
-    academicYear: "4th Year",
+    academicYear: "3rd Year",
     areasOfInterest: ["Wireless Comms", "5G/6G"],
     socials: { linkedin: "https://linkedin.com", github: "https://github.com" },
   },
   {
-    name: "[Student Name]",
-    role: "Vice Chairperson",
+    name: "K.Vishnu Vardhan Reddy",
+    role: "Vice Chair",
     department: "ECE",
-    academicYear: "4th Year",
+    academicYear: "3rd Year",
     areasOfInterest: ["IoT", "Signal Processing"],
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "[Student Name]",
+    name: "D.Mani Sharath",
     role: "Secretary",
     department: "ECE",
     academicYear: "3rd Year",
@@ -39,28 +39,21 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "[Student Name]",
+    name: "M.Thushara",
     role: "Treasurer",
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Embedded Systems"],
     socials: { linkedin: "https://linkedin.com" },
   },
+  
   {
-    name: "[Student Name]",
-    role: "Technical Lead",
-    department: "CSE / ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["AI for Comms", "Python"],
-    socials: { linkedin: "https://linkedin.com", github: "https://github.com" },
-  },
-  {
-    name: "[Student Name]",
+    name: "G.Sriram",
     role: "Webmaster",
-    department: "CSE / ECE",
+    department: "CSE",
     academicYear: "3rd Year",
     areasOfInterest: ["Next.js", "Web Dev"],
-    socials: { linkedin: "https://linkedin.com", github: "https://github.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
   },
 ];
 
