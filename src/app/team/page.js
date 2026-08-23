@@ -20,7 +20,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Wireless Comms", "5G/6G"],
-    socials: { linkedin: "https://linkedin.com", github: "https://github.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
     name: "K.Vishnu Vardhan Reddy",
@@ -28,7 +28,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["IoT", "Signal Processing"],
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
   },
   {
     name: "D.Mani Sharath",
@@ -44,7 +44,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Embedded Systems"],
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/thushara-mallekedi-706002384/" },
   },
   
   {
