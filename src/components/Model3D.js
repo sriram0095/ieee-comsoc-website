@@ -21,7 +21,14 @@ export default function Model3D() {
       <Canvas
         className="w-full h-full cursor-grab active:cursor-grabbing"
         camera={{ position: [0, 1.5, 3.2], fov: 45 }}
-        gl={{ alpha: true, powerPreference: "default" }}
+        // 1. Clamp pixel ratio to max 2 to prevent heavy retina display memory spikes
+        dpr={[1, 2]} 
+        // 2. Optimize performance and power preference for the browser's GPU
+        gl={{ 
+          alpha: true, 
+          powerPreference: "high-performance",
+          antialias: true
+        }}
         onCreated={({ gl }) => {
           gl.domElement.addEventListener("webglcontextlost", (e) => {
             e.preventDefault();
