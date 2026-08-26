@@ -35,7 +35,7 @@ export default function JoinPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "process.env.NEXT_PUBLIC_WEB3FORMS_KEY", // <-- PASTE YOUR WEB3FORMS ACCESS KEY HERE
+          access_key: "7666d21a-9f23-4885-bca7-b0a3af77d934", // <-- PASTE YOUR WEB3FORMS ACCESS KEY HERE
           subject: `New IEEE ComSoc Application: ${formData.fullName}`,
           from_name: "IEEE ComSoc Portal",
           name: formData.fullName,
