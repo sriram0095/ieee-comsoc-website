@@ -54,13 +54,14 @@ export default function Navbar() {
           })}
         </nav>
 
+        
         {/* Right CTA Button */}
         <div>
           <Link
             href="/join-us"
-            className="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-[#1D63B8] hover:bg-[#154c8c] rounded-lg shadow-md shadow-blue-500/20 transition-all hover:-translate-y-0.5"
+            className="hidden sm:inline-flex items-center px-5 py-2.5 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-md shadow-blue-600/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           >
-            Join Chapter
+          Join Chapter
           </Link>
         </div>
 

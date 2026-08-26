@@ -1,18 +1,26 @@
+"use client";
+
 import Image from "next/image";
+
+// Inside src/components/TeamCard.js
 
 export default function TeamCard({ member }) {
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col items-center text-center hover:border-cyan-500/40 transition-all duration-300">
+    <div className="group relative bg-slate-900/80 border border-slate-800 hover:border-[#1D63B8]/60 backdrop-blur-md rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10">
+      
+     
       
       {/* Member Photo */}
       <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-cyan-500/30 bg-slate-800">
         {member.photoUrl ? (
-          <Image
-            src={member.photoUrl}
-            alt={member.name}
-            fill
-            className="object-cover"
-          />
+        <Image
+          src={member.photoUrl}
+          alt={member.name}
+          fill
+          draggable={false} // <-- Stops dragging the image
+          onContextMenu={(e) => e.preventDefault()} // <-- Stops right-click save menu
+          className="object-cover pointer-events-none select-none" // <-- Tailwind utility to prevent interaction
+        />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-slate-500 font-semibold text-xl">
             {member.name.charAt(0)}

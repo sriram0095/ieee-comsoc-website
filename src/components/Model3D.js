@@ -8,8 +8,16 @@ function ActualModel() {
   const modelRef = useRef();
   const { scene } = useGLTF("/telescope.glb"); 
 
-  // Continuous useFrame rotation loop removed for optimal performance!
-  return <primitive ref={modelRef} object={scene} scale={1.8} position={[0, 0.3, 0]} />;
+  return (
+    <primitive 
+      ref={modelRef} 
+      object={scene} 
+      scale={1.8} 
+      position={[0, 0.3, 0]} 
+      /* Added initial cross-direction angle [X, Y, Z] */
+      rotation={[0, -Math.PI /1.5, 0]} 
+    />
+  );
 }
 
 export default function Model3D() {

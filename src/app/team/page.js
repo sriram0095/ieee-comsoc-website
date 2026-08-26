@@ -2,7 +2,7 @@ import TeamCard from "@/components/TeamCard";
 
 // Initial structured data for chapter leadership
 const FACULTY_ADVISOR = {
-  name: "Dr. [Faculty Name]",
+  name: "Name ",
   role: "Faculty Advisor",
   department: "Department of Electronics & Communication",
   bio: "Guiding the chapter toward technological excellence, research initiatives, and professional development.",
@@ -20,6 +20,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Wireless Comms", "5G/6G"],
+    photoUrl:"",
     socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
@@ -28,6 +29,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["IoT", "Signal Processing"],
+    photoUrl:"",
     socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
   },
   {
@@ -36,6 +38,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Computer Networks"],
+    photoUrl: "/mani.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -44,6 +47,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Embedded Systems"],
+    photoUrl:"",
     socials: { linkedin: "https://www.linkedin.com/in/thushara-mallekedi-706002384/" },
   },
   
@@ -53,6 +57,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "CSE",
     academicYear: "3rd Year",
     areasOfInterest: ["Next.js", "Web Dev"],
+    photoUrl:"",
     socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
   },
 ];

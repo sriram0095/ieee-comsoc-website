@@ -17,3 +17,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Reusable Button Hover Effect */
+@utility btn-comsoc {
+  @apply px-6 py-3 bg-[var(--comsoc-blue)] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-md shadow-blue-600/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+}
+
+/* Protect images from dragging and right-clicking */
+.no-save {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none; /* Optional: completely blocks mouse interactions like right-click/drag */
+}
