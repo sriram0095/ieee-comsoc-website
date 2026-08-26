@@ -15,7 +15,7 @@ const FACULTY_ADVISOR = {
 
 const EXECUTIVE_COMMITTEE = [
   {
-    name: "T.V.Sai Charan",
+    name: "Sai Charan Tiruveedhula",
     role: "Chair",
     department: "ECE",
     academicYear: "3rd Year",
@@ -24,7 +24,7 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
-    name: "K.Vishnu Vardhan Reddy",
+    name: "Vishnu Vardhan Reddy Karla",
     role: "Vice Chair",
     department: "ECE",
     academicYear: "3rd Year",
@@ -33,7 +33,7 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
   },
   {
-    name: "D.Mani Sharath",
+    name: "Mani Sharath Devarala",
     role: "Secretary",
     department: "ECE",
     academicYear: "3rd Year",
@@ -42,7 +42,7 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "M.Thushara",
+    name: "Thushara Mallekedi",
     role: "Treasurer",
     department: "ECE",
     academicYear: "3rd Year",
@@ -52,7 +52,7 @@ const EXECUTIVE_COMMITTEE = [
   },
   
   {
-    name: "G.Sriram",
+    name: "Sriram Govindu",
     role: "Webmaster",
     department: "CSE",
     academicYear: "3rd Year",
