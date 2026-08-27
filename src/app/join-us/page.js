@@ -7,6 +7,7 @@ export default function JoinPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "", // Added phone to state
     department: "ECE",
     year: "1st Year",
     interest: "",
@@ -35,11 +36,12 @@ export default function JoinPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "7666d21a-9f23-4885-bca7-b0a3af77d934", // <-- PASTE YOUR WEB3FORMS ACCESS KEY HERE
+          access_key: "7666d21a-9f23-4885-bca7-b0a3af77d934",
           subject: `New IEEE ComSoc Application: ${formData.fullName}`,
           from_name: "IEEE ComSoc Portal",
           name: formData.fullName,
           email: formData.email,
+          phone: formData.phone, // Included phone in Web3Forms payload
           department: formData.department,
           academic_year: formData.year,
           interest: formData.interest || "Not specified",
@@ -54,6 +56,7 @@ export default function JoinPage() {
         setFormData({
           fullName: "",
           email: "",
+          phone: "",
           department: "ECE",
           year: "1st Year",
           interest: "",
@@ -187,6 +190,22 @@ export default function JoinPage() {
               </div>
             </div>
 
+            {/* Phone Number (Mandatory) */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                Phone Number <span className="text-red-400">*</span>
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="e.g. +91 XXXXX XXXXX"
+                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+              />
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Department */}
               <div>
@@ -279,7 +298,7 @@ export default function JoinPage() {
         {/* Contact Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <a
-            href="mailto:comsoc-chapter@university.edu"
+            href="mailto:ieee.comsoc@gnuindia.org"
             className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
           >
             <span className="text-xl mb-1">✉️</span>
@@ -288,7 +307,7 @@ export default function JoinPage() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/ieee-comsoc-gnu-9026b4424?utm_source=share_via&utm_content=profile&utm_medium=member_android"
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
@@ -299,7 +318,7 @@ export default function JoinPage() {
           </a>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/comsoc.ieee.gnu?igsi=MWlnZWhlc3gwMmw5NQ=="
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"

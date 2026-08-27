@@ -26,7 +26,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Coordinator",
     bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "",
+    photoUrl: "/manpreet.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -35,7 +35,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Coordinator",
     bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "",
+    photoUrl: "/rajshekar.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
 ];
@@ -52,7 +52,7 @@ const CORE_TEAM = [
     socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
-    name: "Vishnu Vardhan Reddy Karla",
+    name: "Vishnu Reddy Karla",
     role: "Vice Chair",
     department: "ECE",
     academicYear: "3rd Year",
@@ -67,7 +67,7 @@ const CORE_TEAM = [
     academicYear: "3rd Year",
     areasOfInterest: ["Computer Networks"],
     photoUrl: "/mani.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/sharath-devarala-3881a8406?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
   },
   {
     name: "Thushara Mallekedi",
@@ -75,7 +75,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Embedded Systems"],
-    photoUrl: "",
+    photoUrl: "/thushara.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/thushara-mallekedi-706002384/" },
   },
   {
@@ -83,7 +83,7 @@ const CORE_TEAM = [
     role: "Webmaster",
     department: "CSE",
     academicYear: "3rd Year",
-    areasOfInterest: ["Next.js", "Web Dev"],
+    areasOfInterest: ["Web Dev"],
     photoUrl: "",
     socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
   },
@@ -120,6 +120,15 @@ const EXECUTIVE_COMMITTEE = [
   },
   {
     name: "M. Prudhvi",
+    role: "Student Representative",
+    department: "ECE",
+    academicYear: "3rd Year",
+    areasOfInterest: ["Student Coordination"],
+    photoUrl: "",
+    socials: { linkedin: "https://linkedin.com" },
+  },
+  {
+    name: "P. Prethika",
     role: "Student Representative",
     department: "ECE",
     academicYear: "3rd Year",
@@ -217,7 +226,7 @@ export default function TeamPage() {
       {/* Page Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-4">
-          IEEE Student Branch - STB60237593[cite: 1]
+          IEEE Student Branch - STB60237593
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
           Chapter <span className="text-cyan-400">Leadership</span>
@@ -232,7 +241,7 @@ export default function TeamPage() {
         <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
           Faculty Leadership
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-18 max-w-3xl mx-auto">
           {FACULTY_LEADERSHIP.map((member, idx) => (
             <TeamCard key={idx} member={member} />
           ))}
