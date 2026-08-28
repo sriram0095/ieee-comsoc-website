@@ -19,16 +19,26 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[#020611]/80 border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Logo / Brand Replacement */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <Image
-            src="/logo.png" 
-            alt="IEEE ComSoc Logo"
-            width={140}
-            height={40}
-            className="h-18 w-auto object-contain"
-            priority
-          />
+        {/* Secured Logo / Brand Link */}
+        <Link 
+          href="/" 
+          className="flex items-center gap-2 group select-none"
+        >
+          {/* Protective Wrapper preventing right-click and dragging */}
+          <div 
+            className="relative flex items-center select-none"
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <Image
+              src="/logo.png" 
+              alt="IEEE ComSoc Logo"
+              width={140}
+              height={40}
+              className="h-18 w-auto object-contain select-none pointer-events-none"
+              draggable={false}
+              priority
+            />
+          </div>
         </Link>
 
         {/* Navigation Links with Hover Effects */}
@@ -54,7 +64,6 @@ export default function Navbar() {
           })}
         </nav>
 
-        
         {/* Right CTA Button */}
         <div>
           <Link
