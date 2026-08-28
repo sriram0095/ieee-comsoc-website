@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
             particleCount={500}
             particleSpread={10}
             speed={0.1}
-            particleColors={['#1D63B8', '#ebb587', '#ffffff']}
+            particleColors={['#1D63B8', '#3b82f6', '#ffffff']}
             moveParticlesOnHover={true}
             particleHoverFactor={1.5}
             alphaParticles={false}

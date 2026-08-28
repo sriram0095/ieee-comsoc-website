@@ -48,7 +48,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Wireless Comms", "5G/6G"],
-    photoUrl: "",
+    photoUrl: "/Charan1.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
@@ -57,7 +57,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["IoT", "Signal Processing"],
-    photoUrl: "",
+    photoUrl: "/Vishnu.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
   },
   {
@@ -84,7 +84,7 @@ const CORE_TEAM = [
     department: "CSE",
     academicYear: "3rd Year",
     areasOfInterest: ["Web Dev"],
-    photoUrl: "",
+    photoUrl: "/Sriram1.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
   },
 ];

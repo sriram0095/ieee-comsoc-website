@@ -290,45 +290,90 @@ export default function JoinPage() {
 
       {/* Direct Contact / Connect Section */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-white mb-3">Other Ways to Connect</h2>
-        <p className="text-slate-300 text-sm mb-8 max-w-xl mx-auto">
-          Reach out directly to our team through any of the channels below to get added to our community group or ask questions.
-        </p>
+  <h2 className="text-2xl font-bold text-white mb-3">
+    Other Ways to Connect
+  </h2>
 
-        {/* Contact Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a
-            href="mailto:ieee.comsoc@gnuindia.org"
-            className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-          >
-            <span className="text-xl mb-1">✉️</span>
-            <span className="text-sm font-semibold text-white">Email Us</span>
-            <span className="text-xs text-slate-400 mt-1">Direct inquiries</span>
-          </a>
+  <p className="text-slate-300 text-sm mb-8 max-w-xl mx-auto">
+    Reach out directly to our team through any of the channels below to get
+    added to our community group or ask questions.
+  </p>
 
-          <a
-            href="https://www.linkedin.com/in/ieee-comsoc-gnu-9026b4424?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-          >
-            <span className="text-xl mb-1">💼</span>
-            <span className="text-sm font-semibold text-white">LinkedIn</span>
-            <span className="text-xs text-slate-400 mt-1">Updates & networking</span>
-          </a>
+  {/* Contact Links Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-          <a
-            href="https://www.instagram.com/comsoc.ieee.gnu?igsi=MWlnZWhlc3gwMmw5NQ=="
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-          >
-            <span className="text-xl mb-1">📸</span>
-            <span className="text-sm font-semibold text-white">Instagram</span>
-            <span className="text-xs text-slate-400 mt-1">Event alerts</span>
-          </a>
-        </div>
+    {/* Email */}
+    <a
+      href="mailto:ieee.comsoc@gnuindia.org"
+      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
+    >
+      <div className="w-12 h-12 mb-3 flex items-center justify-center">
+        <img
+          src="/mail.png"
+          alt="Email"
+          className="w-10 h-10 object-contain"
+        />
       </div>
+
+      <span className="text-sm font-semibold text-white">
+        Email Us
+      </span>
+
+      <span className="text-xs text-slate-400 mt-1">
+        Direct inquiries
+      </span>
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/in/ieee-comsoc-gnu-9026b4424"
+      target="_blank"
+      rel="noreferrer"
+      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
+    >
+      <div className="w-12 h-12 mb-3 flex items-center justify-center">
+        <img
+          src="/linkedin.png"
+          alt="LinkedIn"
+          className="w-10 h-10 object-contain"
+        />
+      </div>
+
+      <span className="text-sm font-semibold text-white">
+        LinkedIn
+      </span>
+
+      <span className="text-xs text-slate-400 mt-1">
+        Updates & networking
+      </span>
+    </a>
+
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/comsoc.ieee.gnu"
+      target="_blank"
+      rel="noreferrer"
+      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
+    >
+      <div className="w-12 h-12 mb-3 flex items-center justify-center">
+        <img
+          src="/instagram.png"
+          alt="Instagram"
+          className="w-10 h-10 object-contain"
+        />
+      </div>
+
+      <span className="text-sm font-semibold text-white">
+        Instagram
+      </span>
+
+      <span className="text-xs text-slate-400 mt-1">
+        Event alerts
+      </span>
+    </a>
+
+  </div>
+</div>  
 
     </div>
   );
