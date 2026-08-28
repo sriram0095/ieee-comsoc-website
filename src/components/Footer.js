@@ -50,9 +50,8 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="flex flex-col gap-2.5 text-sm text-slate-400">
-              <li>comsoc-chapter@university.edu</li>
-              <li>+91 98765 43210</li>
-              <li>Department of ECE, Campus Name</li>
+              <li>ieee.comsoc@gnuindia.org</li>
+              <li>Department of ECE,UIET-GNU </li>
             </ul>
           </div>
 

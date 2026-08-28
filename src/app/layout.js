@@ -16,14 +16,14 @@ export default function RootLayout({ children }) {
         {/* Global Fixed Background Particles Layer */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Particles
-            particleCount={300}
-            particleSpread={20}
+            particleCount={500}
+            particleSpread={10}
             speed={0.1}
-            particleColors={['#1D63B8', '#3b82f6', '#ffffff']}
+            particleColors={['#1D63B8', '#ebb587', '#ffffff']}
             moveParticlesOnHover={true}
             particleHoverFactor={1.5}
             alphaParticles={false}
-            particleBaseSize={55}
+            particleBaseSize={45}
             sizeRandomness={0.4}
             cameraDistance={20}
             disableRotation={true}
