@@ -1,27 +1,10 @@
 import Link from "next/link";
 import Model3D from "@/components/Model3D";
-import Particles from "@/components/Particles";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-slate-950 text-white overflow-hidden">
+    <div className="relative min-h-screen bg-transparent text-white overflow-hidden">
       
-      {/* Background Particles Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Particles
-          particleColors={["#1D63B8", "#3b82f6", "#ffffff"]}
-          particleCount={200}
-          particleSpread={15}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}       
-          particleHoverFactor={1.5}         
-          alphaParticles={false}
-          disableRotation={true}
-          pixelRatio={1}
-        />
-      </div>
-
       {/* Foreground Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
         
@@ -76,34 +59,34 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Card 1 */}
-            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 rounded-2xl hover:border-[#1D63B8] transition-all group shadow-2xl">
+              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/15 border border-[#1D63B8]/40 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
                 📡
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Technical Workshops</h3>
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Gain practical, hands-on experience with hardware simulators, software-defined radios, antenna prototyping, and next-gen wireless standards.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 rounded-2xl hover:border-[#1D63B8] transition-all group shadow-2xl">
+              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/15 border border-[#1D63B8]/40 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
                 🎤
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Expert Talks & Webinars</h3>
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Interact directly with IEEE Distinguished Lecturers, industry researchers, and senior professionals leading telecom innovations globally.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-8 rounded-2xl hover:border-[#1D63B8]/50 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/10 border border-[#1D63B8]/30 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 rounded-2xl hover:border-[#1D63B8] transition-all group shadow-2xl">
+              <div className="w-12 h-12 rounded-xl bg-[#1D63B8]/15 border border-[#1D63B8]/40 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
                 🚀
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Research & Hackathons</h3>
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Collaborate on peer groups, participate in networking hackathons, and receive mentorship for technical paper writing and publications.
               </p>
             </div>
