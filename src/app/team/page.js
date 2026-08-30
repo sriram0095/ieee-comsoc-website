@@ -97,7 +97,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Chapter Operations"],
-    photoUrl: "",
+    photoUrl: "/srikar1.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -124,7 +124,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
-    photoUrl: "",
+    photoUrl: "/prudvi.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -151,7 +151,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "",
+    photoUrl: "/srimanth1.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -232,7 +232,7 @@ export default function TeamPage() {
           Chapter <span className="text-cyan-400">Leadership</span>
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Meet the faculty advisors, core student leaders, and executive committee members driving our chapter forward[cite: 1].
+          Meet the faculty advisors, core student leaders, and executive committee members driving our chapter forward.
         </p>
       </div>
 

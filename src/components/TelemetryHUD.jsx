@@ -3,17 +3,24 @@
 import { useState, useEffect } from "react";
 
 export default function TelemetryHUD() {
-  const [coords, setCoords] = useState({ lat: "42.8591", lng: "118.4204" });
+  const [coords, setCoords] = useState({ lat: "0.0000", lng: "0.0000" });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const baseLat = 12.0000;
-      const baseLng = 78.0000;
+      // Bottom-left origin (0,0) coordinate system mapping:
+      // X-axis (Longitude): 0 at the left edge, increases to 100.0000 towards the right.
+      // Y-axis (Latitude): 0 at the bottom edge, increases to 50.0000 upwards towards the top.
       
-      const dynamicLat = (baseLat + (e.clientY / window.innerHeight) * 45.0).toFixed(4);
-      const dynamicLng = (baseLng + (e.clientX / window.innerWidth) * 120.0).toFixed(4);
-      
-      setCoords({ lat: dynamicLat, lng: dynamicLng });
+      const maxLat = 50.0; 
+      const maxLng = 100.0; 
+
+      const xVal = (e.clientX / window.innerWidth) * maxLng;
+      const yVal = ((window.innerHeight - e.clientY) / window.innerHeight) * maxLat;
+
+      setCoords({ 
+        lat: yVal.toFixed(4), 
+        lng: xVal.toFixed(4) 
+      });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -27,7 +34,7 @@ export default function TelemetryHUD() {
       
       {/* Pulsing Status Dot */}
       <div className="flex items-center gap-1.5">
-        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping absolute opacity-100"></span>
+        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping absolute opacity-75"></span>
         <span className="w-2 h-2 rounded-full bg-cyan-400 relative"></span>
       </div>
 

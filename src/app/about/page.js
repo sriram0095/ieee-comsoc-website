@@ -76,15 +76,15 @@ export default function AboutPage() {
     <p className="text-slate-400 text-sm">The primary goals driving our chapter initiatives forward.</p>
   </div>
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8]/50 transition-all">
+    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] transition-all">
       <h3 className="text-white font-semibold text-base mb-2">Technical Skill Building</h3>
       <p className="text-slate-400 text-xs leading-relaxed">Conducting rigorous training sessions on networking software, simulation tools, and hardware architectures.</p>
     </div>
-    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8]/50 transition-all">
+    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] transition-all">
       <h3 className="text-white font-semibold text-base mb-2">Industry Interaction</h3>
       <p className="text-slate-400 text-xs leading-relaxed">Connecting students with leading researchers, corporate engineers, and IEEE distinguished lecturers.</p>
     </div>
-    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8]/50 transition-all">
+    <div className="p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] transition-all">
       <h3 className="text-white font-semibold text-base mb-2">Collaborative Research</h3>
       <p className="text-slate-400 text-xs leading-relaxed">Encouraging student paper publications, open-source group projects, and tech innovation challenges.</p>
     </div>

@@ -25,10 +25,10 @@ export default function RootLayout({ children }) {
             particleHoverFactor={1.5}
             alphaParticles={false}
             particleBaseSize={45}
-            sizeRandomness={0.4}
+            sizeRandomness={0.1}
             cameraDistance={20}
             disableRotation={true}
-            pixelRatio={1}
+            pixelRatio={2}
           />
         </div>
 
