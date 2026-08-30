@@ -13,6 +13,7 @@ export default function HomePage() {
           
           {/* Left Column: Title & CTA */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D63B8]/10 border border-[#1D63B8]/30 text-blue-400 text-xs font-semibold">
               IEEE Communications Society Student Branch Chapter
             </div>

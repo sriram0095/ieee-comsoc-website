@@ -88,7 +88,7 @@ export default function JoinPage() {
 
       {/* Membership Levels / Guidance */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between">
+        <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 rounded-2xl flex flex-col justify-between shadow-2xl hover:border-[#1D63B8] transition-all">
           <div>
             <h3 className="text-xl font-bold text-white mb-3">Chapter Participation</h3>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
@@ -102,7 +102,7 @@ export default function JoinPage() {
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between">
+        <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 rounded-2xl flex flex-col justify-between shadow-2xl hover:border-[#1D63B8] transition-all">
           <div>
             <h3 className="text-xl font-bold text-white mb-3">Official IEEE Membership</h3>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
@@ -123,257 +123,245 @@ export default function JoinPage() {
       </div>
 
       {/* Interactive Application Form Section */}
-      <div className="bg-slate-900/60 border border-cyan-500/30 rounded-2xl p-6 sm:p-12 max-w-4xl mx-auto shadow-xl mb-16">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2">Apply for Chapter Membership</h2>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto">
-            Fill out the form below to register your details. Our admin team will receive your application instantly and get back to you!
-          </p>
-        </div>
-
-        {status.success ? (
-          <div className="text-center py-12 space-y-4">
-            <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl font-bold border border-emerald-500/20">
-              ✓
-            </div>
-            <h2 className="text-2xl font-bold text-white">Application Received!</h2>
-            <p className="text-slate-300 max-w-md mx-auto text-sm">
-              Thank you for applying. Your details have been successfully emailed to our chapter leadership team. We will reach out to you shortly!
+      <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 rounded-2xl p-6 sm:p-12 max-w-4xl mx-auto shadow-2xl mb-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#1D63B8]/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div className="relative z-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Apply for Chapter Membership</h2>
+            <p className="text-slate-300 text-sm max-w-xl mx-auto">
+              Fill out the form below to register your details. Our admin team will receive your application instantly and get back to you!
             </p>
-            <button
-              onClick={() => setStatus({ submitting: false, success: false, error: null })}
-              className="mt-4 px-6 py-2 bg-cyan-400 hover:bg-cyan-300 text-[#001529] text-xs font-semibold uppercase tracking-wider rounded-lg transition-all"
-            >
-              Submit Another Response
-            </button>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            
-            {status.error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg">
-                {status.error}
-              </div>
-            )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Full Name */}
+          {status.success ? (
+            <div className="text-center py-12 space-y-4">
+              <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl font-bold border border-emerald-500/20">
+                ✓
+              </div>
+              <h2 className="text-2xl font-bold text-white">Application Received!</h2>
+              <p className="text-slate-300 max-w-md mx-auto text-sm">
+                Thank you for applying. Your details have been successfully emailed to our chapter leadership team. We will reach out to you shortly!
+              </p>
+              <button
+                onClick={() => setStatus({ submitting: false, success: false, error: null })}
+                className="mt-4 px-6 py-2 bg-cyan-400 hover:bg-cyan-300 text-[#001529] text-xs font-semibold uppercase tracking-wider rounded-lg transition-all"
+              >
+                Submit Another Response
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {status.error && (
+                <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg">
+                  {status.error}
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Full Name */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    Full Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    required
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="e.g. John Doe"
+                    className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  />
+                </div>
+
+                {/* Email Address */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    Email Address <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="e.g. student@university.edu"
+                    className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  />
+                </div>
+              </div>
+
+              {/* Phone Number (Mandatory) */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Full Name <span className="text-red-400">*</span>
+                  Phone Number <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="e.g. +91 XXXXX XXXXX"
+                  className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Department */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    Department <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    name="department"
+                    value={formData.department}
+                    onChange={handleChange}
+                    className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  >
+                    <option value="ECE" className="bg-slate-950 text-white">Electronics & Communication (ECE)</option>
+                    <option value="CSE" className="bg-slate-950 text-white">Computer Science (CSE)</option>
+                    <option value="EEE" className="bg-slate-950 text-white">Electrical & Electronics (EEE)</option>
+                    <option value="IT" className="bg-slate-950 text-white">Information Technology (IT)</option>
+                    <option value="Other" className="bg-slate-950 text-white">Other Engineering Branch</option>
+                  </select>
+                </div>
+
+                {/* Academic Year */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                    Academic Year <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    name="year"
+                    value={formData.year}
+                    onChange={handleChange}
+                    className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  >
+                    <option value="1st Year" className="bg-slate-950 text-white">1st Year</option>
+                    <option value="2nd Year" className="bg-slate-950 text-white">2nd Year</option>
+                    <option value="3rd Year" className="bg-slate-950 text-white">3rd Year</option>
+                    <option value="4th Year" className="bg-slate-950 text-white">4th Year</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Areas of Interest */}
+              <div>
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  Primary Area of Interest
                 </label>
                 <input
                   type="text"
-                  name="fullName"
-                  required
-                  value={formData.fullName}
+                  name="interest"
+                  value={formData.interest}
                   onChange={handleChange}
-                  placeholder="e.g. John Doe"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  placeholder="e.g. 5G Networks, IoT, Embedded Systems, Web Dev"
+                  className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
                 />
               </div>
 
-              {/* Email Address */}
+              {/* Message / Motivation */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Email Address <span className="text-red-400">*</span>
+                  Why do you want to join ComSoc?
                 </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
+                <textarea
+                  name="message"
+                  rows={4}
+                  value={formData.message}
                   onChange={handleChange}
-                  placeholder="e.g. student@university.edu"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Phone Number (Mandatory) */}
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Phone Number <span className="text-red-400">*</span>
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="e.g. +91 XXXXX XXXXX"
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Department */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Department <span className="text-red-400">*</span>
-                </label>
-                <select
-                  name="department"
-                  value={formData.department}
-                  onChange={handleChange}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-                >
-                  <option value="ECE">Electronics & Communication (ECE)</option>
-                  <option value="CSE">Computer Science (CSE)</option>
-                  <option value="EEE">Electrical & Electronics (EEE)</option>
-                  <option value="IT">Information Technology (IT)</option>
-                  <option value="Other">Other Engineering Branch</option>
-                </select>
+                  placeholder="Tell us briefly about your expectations or previous experience..."
+                  className="w-full bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                ></textarea>
               </div>
 
-              {/* Academic Year */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Academic Year <span className="text-red-400">*</span>
-                </label>
-                <select
-                  name="year"
-                  value={formData.year}
-                  onChange={handleChange}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-                >
-                  <option value="1st Year">1st Year</option>
-                  <option value="2nd Year">2nd Year</option>
-                  <option value="3rd Year">3rd Year</option>
-                  <option value="4th Year">4th Year</option>
-                </select>
-              </div>
-            </div>
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={status.submitting}
+                className="w-full py-3.5 bg-cyan-400 hover:bg-cyan-300 text-[#001529] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {status.submitting ? "Sending Application..." : "Submit Membership Application"}
+              </button>
 
-            {/* Areas of Interest */}
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Primary Area of Interest
-              </label>
-              <input
-                type="text"
-                name="interest"
-                value={formData.interest}
-                onChange={handleChange}
-                placeholder="e.g. 5G Networks, IoT, Embedded Systems, Web Dev"
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-              />
-            </div>
-
-            {/* Message / Motivation */}
-            <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Why do you want to join ComSoc?
-              </label>
-              <textarea
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us briefly about your expectations or previous experience..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-              ></textarea>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={status.submitting}
-              className="w-full py-3.5 bg-cyan-400 hover:bg-cyan-300 text-[#001529] text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status.submitting ? "Sending Application..." : "Submit Membership Application"}
-            </button>
-
-          </form>
-        )}
+            </form>
+          )}
+        </div>
       </div>
 
       {/* Direct Contact / Connect Section */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto">
-  <h2 className="text-2xl font-bold text-white mb-3">
-    Other Ways to Connect
-  </h2>
+      <div className="bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 p-8 sm:p-12 rounded-2xl shadow-2xl relative overflow-hidden max-w-4xl mx-auto">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#1D63B8]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-  <p className="text-slate-300 text-sm mb-8 max-w-xl mx-auto">
-    Reach out directly to our team through any of the channels below to get
-    added to our community group or ask questions.
-  </p>
+        <div className="relative z-10 text-center max-w-2xl mx-auto mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Other Ways to Connect
+          </h2>
+          <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+            Reach out directly to our team through any of the channels below to get added to our community group or ask questions.
+          </p>
+        </div>
 
-  {/* Contact Links Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {/* Contact Links Grid */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-    {/* Email */}
-    <a
-      href="mailto:ieee.comsoc@gnuindia.org"
-      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-    >
-      <div className="w-12 h-12 mb-3 flex items-center justify-center">
-        <img
-          src="/mail.png"
-          alt="Email"
-          className="w-10 h-10 object-contain"
-        />
+          {/* Email */}
+          <a
+            href="mailto:ieee.comsoc@gnuindia.org"
+            className="flex flex-col items-center p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] hover:-translate-y-0.5 transition-all"
+          >
+            <div className="w-12 h-12 mb-3 flex items-center justify-center">
+              <img
+                src="/mail.png"
+                alt="Email"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="text-sm font-semibold text-white">Email Us</span>
+            <span className="text-xs text-slate-400 mt-1">Direct inquiries</span>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/ieee-comsoc-gnu-9026b4424"
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] hover:-translate-y-0.5 transition-all"
+          >
+            <div className="w-12 h-12 mb-3 flex items-center justify-center">
+              <img
+                src="/linkedin.png"
+                alt="LinkedIn"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="text-sm font-semibold text-white">LinkedIn</span>
+            <span className="text-xs text-slate-400 mt-1">Updates & networking</span>
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/comsoc.ieee.gnu"
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center p-6 bg-slate-950/40 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-[#1D63B8] hover:-translate-y-0.5 transition-all"
+          >
+            <div className="w-12 h-12 mb-3 flex items-center justify-center">
+              <img
+                src="/instagram.png"
+                alt="Instagram"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="text-sm font-semibold text-white">Instagram</span>
+            <span className="text-xs text-slate-400 mt-1">Event alerts</span>
+          </a>
+
+        </div>
       </div>
-
-      <span className="text-sm font-semibold text-white">
-        Email Us
-      </span>
-
-      <span className="text-xs text-slate-400 mt-1">
-        Direct inquiries
-      </span>
-    </a>
-
-    {/* LinkedIn */}
-    <a
-      href="https://www.linkedin.com/in/ieee-comsoc-gnu-9026b4424"
-      target="_blank"
-      rel="noreferrer"
-      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-    >
-      <div className="w-12 h-12 mb-3 flex items-center justify-center">
-        <img
-          src="/linkedin.png"
-          alt="LinkedIn"
-          className="w-10 h-10 object-contain"
-        />
-      </div>
-
-      <span className="text-sm font-semibold text-white">
-        LinkedIn
-      </span>
-
-      <span className="text-xs text-slate-400 mt-1">
-        Updates & networking
-      </span>
-    </a>
-
-    {/* Instagram */}
-    <a
-      href="https://www.instagram.com/comsoc.ieee.gnu"
-      target="_blank"
-      rel="noreferrer"
-      className="flex flex-col items-center p-5 bg-slate-950 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:-translate-y-0.5 transition-all"
-    >
-      <div className="w-12 h-12 mb-3 flex items-center justify-center">
-        <img
-          src="/instagram.png"
-          alt="Instagram"
-          className="w-10 h-10 object-contain"
-        />
-      </div>
-
-      <span className="text-sm font-semibold text-white">
-        Instagram
-      </span>
-
-      <span className="text-xs text-slate-400 mt-1">
-        Event alerts
-      </span>
-    </a>
-
-  </div>
-</div>  
 
     </div>
   );

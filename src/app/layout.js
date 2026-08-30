@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
+import TelemetryHUD from "@/components/TelemetryHUD";
 import "./globals.css";
 
 export const metadata = {
@@ -33,8 +34,22 @@ export default function RootLayout({ children }) {
 
         {/* Global Foreground Content Layers */}
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
+          
+          {/* Sticky Header Wrapper */}
+          <div className="sticky top-0 z-50 w-full">
+            <Navbar />
+            
+            {/* Compact Floating Telemetry Pill (No full-width bar) */}
+            <div className="absolute right-4 sm:right-8 -bottom-9 z-50 hidden sm:block">
+              <TelemetryHUD />
+            </div>
+          </div>
+
+          {/* Page Content with top spacing to accommodate the floating pill */}
+          <main className="flex-grow pt-8 sm:pt-0.5">
+            {children}
+          </main>
+          
           <Footer />
         </div>
 
