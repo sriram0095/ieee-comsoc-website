@@ -119,7 +119,7 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "M. Prudhvi",
+    name: "Muchapotula Prudhvi",
     role: "Student Representative",
     department: "ECE",
     academicYear: "3rd Year",
