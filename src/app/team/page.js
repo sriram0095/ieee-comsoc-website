@@ -97,7 +97,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Chapter Operations"],
-    photoUrl: "/srikar1.jpeg",
+    photoUrl: "/srikar12.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -106,7 +106,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Financial Planning"],
-    photoUrl: "",
+    photoUrl: "/rishi1.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -124,7 +124,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
-    photoUrl: "/prudvi.jpg",
+    photoUrl: "/prudvi1.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {

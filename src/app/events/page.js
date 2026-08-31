@@ -23,6 +23,24 @@ const MOCK_EVENTS = [
     posterUrl: "/Inaugural.png",
     status: "Completed",
   },
+  {
+    _id: "2",
+    slug: "ieee-comsoc-sbc-gnu-inaugural-function",
+    title: "Robotics Workshop - Techfest IIT Bombay x FUNT Robotics x IEEE ComSoc",
+    description:
+      "The Robotics Workshop, organized by the IEEE Communications Society (ComSoc) Student Branch Chapter at Guru Nanak University in collaboration with Techfest, IIT Bombay, and Funt Robotics Academy, provides students with an introduction to robotics, automation, and innovation. The workshop focuses on bot design, Arduino basics, and robotic challenges including Roboreach, Mesmerize, and Thetasift, helping aspiring engineers strengthen their technical knowledge, problem-solving abilities, and teamwork skills.",
+    category: "Workshop",
+    date: "2026-09-07",
+    startTime: "12:30 PM",
+    endTime: "04:00 PM",
+    venue: "Guru Gobind Singh Auditorium, Guru Nanak University, Hyderabad",
+    speaker: {
+      
+    },
+    posterUrl: "/Techfest.jpeg",
+    status: "Upcoming",
+    registrationUrl:"https://forms.gle/kdQe8aKnF8KKrcwu6",
+  },
 ];
 
 export default function EventsPage() {
@@ -157,10 +175,10 @@ export default function EventsPage() {
                   Speaker
                 </p>
                 <p className="font-medium text-white">
-                  👤 {selectedEvent.speaker.name}
+                   {selectedEvent.speaker.name}
                 </p>
                 <p className="text-slate-400">
-                  {selectedEvent.speaker.designation},{" "}
+                  {selectedEvent.speaker.designation}{" "}
                   {selectedEvent.speaker.organization}
                 </p>
               </div>
@@ -176,30 +194,28 @@ export default function EventsPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-slate-800">
-              {selectedEvent.status === "Completed" ? (
-                <div className="flex-1 py-3 bg-slate-800/50 text-slate-400 text-xs font-semibold uppercase tracking-wider rounded-lg text-center border border-slate-800">
-                  ✓ Event Completed
-                </div>
-              ) : (
-                <button
-                  onClick={() =>
-                    alert(
-                      `Redirecting to registration for: ${selectedEvent.title}`
-                    )
-                  }
-                  className="flex-1 py-3 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Register Now
-                </button>
-              )}
+  {selectedEvent.status === "Completed" ? (
+    <div className="flex-1 py-3 bg-slate-800/50 text-slate-400 text-xs font-semibold uppercase tracking-wider rounded-lg text-center border border-slate-800">
+      ✓ Event Completed
+    </div>
+  ) : (
+    <a
+      href={selectedEvent.registrationUrl || "#"}
+      target="_blank"
+      rel="noreferrer"
+      className="flex-1 py-3 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] text-center flex items-center justify-center"
+    >
+      Register Now 
+    </a>
+  )}
 
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors"
-              >
-                Close
-              </button>
-            </div>
+  <button
+    onClick={() => setSelectedEvent(null)}
+    className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors"
+  >
+    Close
+  </button>
+</div>
           </div>
         </div>
       )}
