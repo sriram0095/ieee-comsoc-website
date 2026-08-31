@@ -56,40 +56,42 @@ export default function EventsPage() {
       </div>
 
       <div className="flex justify-center mb-10">
-  <div className="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 gap-1 sm:gap-2 shadow-2xl">
-    {[
-      { id: "All", label: "All Events" },
-      { id: "Live", label: "Live" },
-      { id: "Upcoming", label: "Upcoming" },
-      { id: "Completed", label: "Completed" },
-    ].map((tab) => {
-      const isActive = activeTab === tab.id;
-      return (
-        <button
-          key={tab.id}
-          onClick={() => setActiveTab(tab.id)}
-          className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
-            isActive
-              ? "bg-[#1D63B8] text-white shadow-lg shadow-blue-500/20"
-              : "text-slate-400 hover:text-white hover:bg-white/[0.04]"
-          }`}
-        >
-          {tab.label}
-        </button>
-      );
-    })}
-  </div>
-</div>
+        <div className="inline-flex flex-wrap justify-center p-1.5 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-[#1D63B8]/30 gap-1 sm:gap-2 shadow-2xl">
+          {[
+            { id: "All", label: "All Events" },
+            { id: "Live", label: "Live" },
+            { id: "Upcoming", label: "Upcoming" },
+            { id: "Completed", label: "Completed" },
+          ].map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
+                  isActive
+                    ? "bg-[#1D63B8] text-white shadow-lg shadow-blue-500/20"
+                    : "text-slate-400 hover:text-white hover:bg-white/[0.04]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
       {filteredEvents.length > 0 ? (
         <div className="flex flex-wrap justify-center gap-8">
           {filteredEvents.map((event) => (
             <div
               key={event._id}
-              onClick={() => setSelectedEvent(event)}
-              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md cursor-pointer"
+              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md"
             >
-              <EventCard event={event} />
+              <EventCard 
+                event={event} 
+                onViewDetails={() => setSelectedEvent(event)} 
+              />
             </div>
           ))}
         </div>

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, onViewDetails }) {
   const isLive = event.status?.toLowerCase() === "live";
 
   return (
     <div
-      className={`relative flex flex-col bg-white/[0.02] backdrop-blur-md rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 shadow-2xl ${
+      onClick={onViewDetails}
+      className={`relative flex flex-col bg-white/[0.02] backdrop-blur-md rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 shadow-2xl cursor-pointer ${
         isLive
           ? "border-red-500 shadow-red-500/20"
           : "border-[#1D63B8]/30 hover:border-[#1D63B8]"
@@ -72,9 +72,13 @@ export default function EventCard({ event }) {
           </p>
         </div>
 
-        {/* CTA Button */}
-        <Link
-          href={`/events/${event.slug}`}
+        {/* CTA Button (Converted to button to prevent routing/404 issues) */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation(); // Prevents double-triggering parent div click
+            onViewDetails();
+          }}
           className={`w-full text-center py-2.5 text-xs font-semibold uppercase tracking-wider rounded-xl transition-all ${
             isLive
               ? "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-600/20"
@@ -82,7 +86,7 @@ export default function EventCard({ event }) {
           }`}
         >
           {isLive ? "Join Live Stream" : "View Details"}
-        </Link>
+        </button>
       </div>
     </div>
   );
