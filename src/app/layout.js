@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import TelemetryHUD from "@/components/TelemetryHUD";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata = {
@@ -52,6 +53,9 @@ export default function RootLayout({ children }) {
           
           <Footer />
         </div>
+
+        {/* Vercel Analytics Tracker */}
+        <Analytics />
 
       </body>
     </html>
