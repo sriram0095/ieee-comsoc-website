@@ -30,6 +30,7 @@ export default function Footer() {
                 { name: "About Us", href: "/about" },
                 { name: "Events", href: "/events" },
                 { name: "Team", href: "/team" },
+                { name: "Gallery", href: "/gallery" },
                 { name: "Join Us", href: "/join-us" }, // Or point to wherever your join page/section lives
               ].map((link) => (
                 <li key={link.name}>
