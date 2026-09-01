@@ -33,7 +33,7 @@ export default function Navbar() {
             onContextMenu={(e) => e.preventDefault()}
           >
             <Image
-              src="/logo.png" 
+              src="/logo4.png" 
               alt="IEEE ComSoc Logo"
               width={140}
               height={40}
