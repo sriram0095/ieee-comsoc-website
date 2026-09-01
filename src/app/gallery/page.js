@@ -31,20 +31,7 @@ const EVENT_GALLERIES = [
     ],
   },
   // You can easily add more event sections here later as you host more events!
-  
-  {
-    eventTitle: "Robotics Workshop - Techfest IIT Bombay x FUNT Robotics x IEEE ComSoc",
-    eventDate: "Upcoming ",
-    items: [
-      {
-        image: "/comingsoon.jpg",
-        label: "From basics",
-        tag: "Workshop",
-      },
-      
-    ],
-  },
-  
+
 ];
 
 export default function GalleryPage() {
