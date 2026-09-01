@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -42,7 +44,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Navigation Links with Hover Effects */}
+        {/* Desktop Navigation Links with Hover Effects */}
         <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -65,17 +67,56 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right CTA Button */}
-        <div>
+        {/* Right CTA Button & Mobile Hamburger */}
+        <div className="flex items-center gap-3">
           <Link
             href="/join-us"
             className="hidden sm:inline-flex items-center px-5 py-2.5 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-md shadow-blue-600/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           >
-          Join Chapter
+            Join Chapter
           </Link>
+
+          {/* Mobile Menu Hamburger Toggle Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+            className="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-slate-800/50 border border-slate-700 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
 
       </div>
+
+      {/* Mobile Dropdown Menu (Only visible on mobile screens when toggled open) */}
+      {isOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#020611]/95 backdrop-blur-xl border-b border-slate-800 px-6 py-6 flex flex-col gap-3 shadow-2xl transition-all">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)} // Automatically close menu upon clicking a link
+                className={`px-4 py-3 text-sm font-medium rounded-lg transition-all ${
+                  isActive
+                    ? "text-blue-400 bg-slate-800/60"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800/40"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </header>
   );
 }
