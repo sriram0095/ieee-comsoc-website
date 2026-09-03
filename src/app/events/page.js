@@ -65,8 +65,8 @@ export default function EventsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
-          Chapter <span className="text-cyan-400">Events</span>
-        </h1>
+  Chapter <span className="text-[#1D63B8]">Events</span>
+</h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
           Explore technical sessions, workshops, expert talks, and interactive
           events organized by our chapter. Click any card to view full details.

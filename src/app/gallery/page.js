@@ -1,6 +1,6 @@
 "use client";
 
-import AccordionGallery from "@/components/AccordionGallery";
+import SimpleGallery from "@/components/SimpleGallery";
 
 // Group your galleries by event sections
 const EVENT_GALLERIES = [
@@ -8,6 +8,11 @@ const EVENT_GALLERIES = [
     eventTitle: "Inaugural Ceremony 2026",
     eventDate: "July 22, 2026",
     items: [
+      {
+        image: "/Inaugural.png",
+        label: "Ribbon Cutting & Lamp Lighting",
+        tag: "Milestone",
+      },
       {
         image: "/Inaugural.png",
         label: "Ribbon Cutting & Lamp Lighting",
@@ -31,7 +36,7 @@ const EVENT_GALLERIES = [
     ],
   },
   // You can easily add more event sections here later as you host more events!
-
+  
 ];
 
 export default function GalleryPage() {
@@ -40,14 +45,15 @@ export default function GalleryPage() {
       
       {/* Page Header */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-4">
-          Chapter Memories & Moments
-        </div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D63B8]/10 border border-[#1D63B8]/30 text-[#1D63B8] text-xs font-semibold mb-4">
+   Chapter Memories & Moments
+</div>
+       
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
-          Visual <span className="text-cyan-400">Gallery</span>
+          Visual <span className="text-[#1D63B8]">Gallery</span>
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Explore highlights and captured moments from our chapter's events. Hover or click any panel to expand.
+          Explore highlights from our chapter's events. Click any photo to view it in high resolution.
         </p>
       </div>
 
@@ -69,8 +75,8 @@ export default function GalleryPage() {
               </span>
             </div>
 
-            {/* Accordion Gallery for this Event */}
-            <AccordionGallery items={section.items} />
+            {/* Clean Grid Gallery for this Event */}
+            <SimpleGallery items={section.items} />
             
           </section>
         ))}

@@ -225,12 +225,12 @@ export default function TeamPage() {
       
       {/* Page Header */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-4">
-          IEEE Student Branch - STB60237593
-        </div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D63B8]/10 border border-[#1D63B8]/30 text-[#1D63B8] text-xs font-semibold mb-4">
+  IEEE Student Branch - STB60237593
+</div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
-          Chapter <span className="text-cyan-400">Leadership</span>
-        </h1>
+  Chapter <span className="text-[#1D63B8]">Leadership</span>
+</h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
           Meet the faculty advisors, core student leaders, and executive committee members driving our chapter forward.
         </p>
