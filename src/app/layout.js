@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import TelemetryHUD from "@/components/TelemetryHUD";
+import AsteroidCursor from "@/components/AsteroidCursor";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -15,6 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-[#020611] text-[#f1f5f9] relative overflow-x-hidden">
         
+        {/* Fast Thin White Asteroid Tail Cursor */}
+        <AsteroidCursor />
+
         {/* Global Fixed Background Particles Layer */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Particles
