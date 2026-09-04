@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import EventCard from "@/components/EventCard";
 
 const MOCK_EVENTS = [
   {
     _id: "1",
     slug: "ieee-comsoc-sbc-gnu-inaugural-function",
+    gallerySlug: "inaugural-ceremony",
     title: "Inauguration of IEEE Communications Society (ComSoc)",
     description:
       "The inaugural function of the IEEE Communications Society (ComSoc) Student Branch Chapter at Guru Nanak University marked the establishment of the university's first IEEE Society Chapter. The event brought together IEEE leaders, faculty members, student representatives, and aspiring engineers to launch a platform focused on technical learning, research, innovation, leadership, and professional development.",
@@ -25,7 +27,8 @@ const MOCK_EVENTS = [
   },
   {
     _id: "2",
-    slug: "ieee-comsoc-sbc-gnu-inaugural-function",
+    slug: "ieee-comsoc-sbc-gnu-robotics-workshop",
+    gallerySlug: "robotics-workshop",
     title: "Robotics Workshop - Techfest IIT Bombay x FUNT Robotics x IEEE ComSoc",
     description:
       "The Robotics Workshop, organized by the IEEE Communications Society (ComSoc) Student Branch Chapter at Guru Nanak University in collaboration with Techfest, IIT Bombay, and Funt Robotics Academy, provides students with an introduction to robotics, automation, and innovation. The workshop focuses on bot design, Arduino basics, and robotic challenges including Roboreach, Mesmerize, and Thetasift, helping aspiring engineers strengthen their technical knowledge, problem-solving abilities, and teamwork skills.",
@@ -34,12 +37,10 @@ const MOCK_EVENTS = [
     startTime: "12:30 PM",
     endTime: "04:00 PM",
     venue: "Guru Gobind Singh Auditorium, Guru Nanak University, Hyderabad",
-    speaker: {
-      
-    },
+    speaker: {},
     posterUrl: "/Techfest.jpeg",
     status: "Upcoming",
-    registrationUrl:"https://forms.gle/kdQe8aKnF8KKrcwu6",
+    registrationUrl: "https://forms.gle/kdQe8aKnF8KKrcwu6",
   },
 ];
 
@@ -65,8 +66,8 @@ export default function EventsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
-  Chapter <span className="text-[#1D63B8]">Events</span>
-</h1>
+          Chapter <span className="text-[#1D63B8]">Events</span>
+        </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
           Explore technical sessions, workshops, expert talks, and interactive
           events organized by our chapter. Click any card to view full details.
@@ -170,18 +171,20 @@ export default function EventsPage() {
                 </p>
               </div>
 
-              <div className="sm:col-span-2">
-                <p className="text-slate-500 uppercase tracking-wider mb-1 font-semibold">
-                  Speaker
-                </p>
-                <p className="font-medium text-white">
-                   {selectedEvent.speaker.name}
-                </p>
-                <p className="text-slate-400">
-                  {selectedEvent.speaker.designation}{" "}
-                  {selectedEvent.speaker.organization}
-                </p>
-              </div>
+              {selectedEvent.speaker?.name && (
+                <div className="sm:col-span-2">
+                  <p className="text-slate-500 uppercase tracking-wider mb-1 font-semibold">
+                    Speaker
+                  </p>
+                  <p className="font-medium text-white">
+                    {selectedEvent.speaker.name}
+                  </p>
+                  <p className="text-slate-400">
+                    {selectedEvent.speaker.designation}{" "}
+                    {selectedEvent.speaker.organization}
+                  </p>
+                </div>
+              )}
             </div>
 
             <div className="space-y-3 mb-8">
@@ -194,28 +197,31 @@ export default function EventsPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-slate-800">
-  {selectedEvent.status === "Completed" ? (
-    <div className="flex-1 py-3 bg-slate-800/50 text-slate-400 text-xs font-semibold uppercase tracking-wider rounded-lg text-center border border-slate-800">
-      ✓ Event Completed
-    </div>
-  ) : (
-    <a
-      href={selectedEvent.registrationUrl || "#"}
-      target="_blank"
-      rel="noreferrer"
-      className="flex-1 py-3 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] text-center flex items-center justify-center"
-    >
-      Register Now 
-    </a>
-  )}
+              {selectedEvent.status === "Completed" ? (
+                <Link
+                  href={`/gallery#${selectedEvent.gallerySlug || "inaugural-ceremony"}`}
+                  className="flex-1 py-3 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] text-center flex items-center justify-center font-bold"
+                >
+                  View Event Gallery
+                </Link>
+              ) : (
+                <a
+                  href={selectedEvent.registrationUrl || "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 py-3 bg-[#1D63B8] hover:bg-[#154c8c] text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] text-center flex items-center justify-center font-bold"
+                >
+                  Register Now 
+                </a>
+              )}
 
-  <button
-    onClick={() => setSelectedEvent(null)}
-    className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors"
-  >
-    Close
-  </button>
-</div>
+              <button
+                onClick={() => setSelectedEvent(null)}
+                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors font-bold"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}

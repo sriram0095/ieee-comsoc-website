@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Prevents sticky headers from covering section titles when scrolled */
+}
+
 :root {
   --background: #020611; /* An ultra-dark, rich navy base that makes royal blue pop */
   --foreground: #f1f5f9; /* Crisp soft white text */

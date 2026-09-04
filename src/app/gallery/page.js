@@ -5,24 +5,26 @@ import CustomMarqueeGallery from "@/components/CustomMarqueeGallery";
 // Group your galleries by event sections
 const EVENT_GALLERIES = [
   {
+    id: "inaugural-ceremony",
     eventTitle: "Inaugural Ceremony 2026",
     eventDate: "July 22, 2026",
     items: [
-  { image: "/1.jpg.jpeg" },
-  { image: "/2.jpg.jpeg" },
-  { image: "/3.jpg.jpeg" },
-  { image: "/4.jpg.jpeg" },
-  { image: "/5.jpg.jpeg" },
-  { image: "/6.jpg.jpeg" },
-  { image: "/7.jpg.jpeg" },
-  { image: "/8.jpg.jpeg" },
-  { image: "/9.jpg.jpeg" },
-  { image: "/10.jpg.jpeg" },
-  { image: "/11.jpg.jpeg" },
-  { image: "/12.jpg.jpeg" },
-]
+      { image: "/1.jpg.jpeg" },
+      { image: "/2.jpg.jpeg" },
+      { image: "/3.jpg.jpeg" },
+      { image: "/4.jpg.jpeg" },
+      { image: "/5.jpg.jpeg" },
+      { image: "/6.jpg.jpeg" },
+      { image: "/7.jpg.jpeg" },
+      { image: "/8.jpg.jpeg" },
+      { image: "/9.jpg.jpeg" },
+      { image: "/10.jpg.jpeg" },
+      { image: "/11.jpg.jpeg" },
+      { image: "/12.jpg.jpeg" },
+    ],
+
   },
-  // You can easily add more event sections here later as you host more events!
+  
   
 ];
 
@@ -47,7 +49,7 @@ export default function GalleryPage() {
       {/* Render Event Sections */}
       <div className="space-y-16">
         {EVENT_GALLERIES.map((section, idx) => (
-          <section key={idx} className="space-y-6">
+          <section key={idx} id={section.id} className="space-y-6 scroll-mt-24">
             
             {/* Section Title Header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-800 pb-4 gap-2">
