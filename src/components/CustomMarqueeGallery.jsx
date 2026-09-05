@@ -12,7 +12,10 @@ export default function CustomMarqueeGallery({ items = [] }) {
   const loopItems = [...items, ...items, ...items];
 
   return (
-    <div className="w-full overflow-hidden relative py-4">
+    <div 
+      className="w-full overflow-hidden relative py-4 select-none"
+      onContextMenu={(e) => e.preventDefault()}
+    >
       {/* Pure CSS Animation Styles (No external packages required) */}
       <style jsx>{`
         @keyframes scrollMarquee {
@@ -26,7 +29,7 @@ export default function CustomMarqueeGallery({ items = [] }) {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: scrollMarquee 60s linear infinite;  //adjustable speed
+          animation: scrollMarquee 60s linear infinite; //adjustable speed
         }
         .marquee-track:hover {
           animation-play-state: paused;
@@ -39,7 +42,9 @@ export default function CustomMarqueeGallery({ items = [] }) {
           <div
             key={index}
             onClick={() => setSelectedImage(item)}
-            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 cursor-pointer group/card transition-all duration-300 hover:border-cyan-400"
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
+            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 cursor-pointer group/card transition-all duration-300 hover:border-cyan-400 no-save"
           >
             {/* Image */}
             <Image
@@ -48,7 +53,8 @@ export default function CustomMarqueeGallery({ items = [] }) {
               fill
               sizes="(max-width: 768px) 280px, 360px"
               priority={index === 0}
-              className="object-cover transition-transform duration-500 group-hover/card:scale-105"
+              draggable={false}
+              className="object-cover transition-transform duration-500 group-hover/card:scale-105 select-none"
             />
 
             {/* Gradient Overlay (Only rendered if label or tag exists) */}
@@ -78,17 +84,20 @@ export default function CustomMarqueeGallery({ items = [] }) {
       {/* Large-Scale Modal Popup when an Image is Clicked */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md select-none"
           onClick={() => setSelectedImage(null)}
+          onContextMenu={(e) => e.preventDefault()}
         >
           <div
-            className="relative max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-2xl overflow-hidden flex flex-col items-center"
+            className="relative max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-2xl overflow-hidden flex flex-col items-center no-save"
             onClick={(e) => e.stopPropagation()}
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
           >
             <button
               onClick={() => setSelectedImage(null)}
               aria-label="Close modal"
-              className="absolute top-4 right-4 z-20 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-30 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
             >
               ✕
             </button>
@@ -99,13 +108,21 @@ export default function CustomMarqueeGallery({ items = [] }) {
                 src={selectedImage.image}
                 alt={selectedImage.label || "Expanded gallery image"}
                 fill
-                className="object-contain"
+                draggable={false}
+                className="object-contain select-none"
+              />
+
+              {/* Invisible Overlay Shield to block modal right-clicks and image dragging */}
+              <div 
+                className="absolute inset-0 z-10 bg-transparent" 
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
 
             {/* Modal Caption (Optional) */}
             {(selectedImage.label || selectedImage.tag) && (
-              <div className="text-center w-full">
+              <div className="text-center w-full relative z-20">
                 {selectedImage.tag && (
                   <span className="text-[10px] font-semibold bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20 uppercase tracking-wider inline-block mb-2">
                     {selectedImage.tag}
