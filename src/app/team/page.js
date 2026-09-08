@@ -128,12 +128,12 @@ const EXECUTIVE_COMMITTEE = [
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "P. Prethika",
+    name: "P.Preethika",
     role: "Student Representative",
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
-    photoUrl: "",
+    photoUrl: "/Preethika.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -160,7 +160,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Workshops", "Coding"],
-    photoUrl: "",
+    photoUrl: "/sandeep.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -178,7 +178,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Graphics", "UI/UX"],
-    photoUrl: "",
+    photoUrl: "/swaranjali.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -187,7 +187,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "",
+    photoUrl: "/anusha.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -205,11 +205,11 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Event Management"],
-    photoUrl: "",
+    photoUrl: "/Gayathri.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
-    name: "J. Pranav",
+    name: "J.Pranav",
     role: "Publicity & Social Media",
     department: "ECE",
     academicYear: "3rd Year",
