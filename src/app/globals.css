@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
-html {
+html[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
+}
+
+html {
   scroll-padding-top: 80px; /* Prevents sticky headers from covering section titles when scrolled */
 }
 
@@ -35,5 +38,5 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  pointer-events: none; /* Optional: completely blocks mouse interactions like right-click/drag */
+  pointer-events: none; /* Blocks mouse interactions like right-click/drag */
 }

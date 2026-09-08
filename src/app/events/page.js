@@ -39,8 +39,7 @@ const MOCK_EVENTS = [
     venue: "Guru Gobind Singh Auditorium, Guru Nanak University, Hyderabad",
     speaker: {},
     posterUrl: "/Techfest.jpeg",
-    status: "Upcoming",
-    registrationUrl: "https://forms.gle/kdQe8aKnF8KKrcwu6",
+    status: "Completed",
   },
 ];
 
@@ -122,6 +121,7 @@ export default function EventsPage() {
         </div>
       )}
 
+      {/* Event Details Popup Modal */}
       {selectedEvent && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
@@ -196,6 +196,7 @@ export default function EventsPage() {
               </p>
             </div>
 
+            {/* Modal Actions */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-slate-800">
               {selectedEvent.status === "Completed" ? (
                 <Link

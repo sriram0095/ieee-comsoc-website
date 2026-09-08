@@ -142,7 +142,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "",
+    photoUrl: "/pardhu.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {

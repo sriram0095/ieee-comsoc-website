@@ -22,10 +22,23 @@ const EVENT_GALLERIES = [
       { image: "/11.jpg.jpeg" },
       { image: "/12.jpg.jpeg" },
     ],
-
   },
-  
-  
+  {
+    id: "robotics-workshop",
+    eventTitle: "Robotics Workshop 2026",
+    eventDate: "September 07, 2026",
+    items: [
+      { image: "/r1.jpeg" },
+      { image: "/r2.jpeg" },
+      { image: "/r3.jpeg" },
+      { image: "/r4.jpeg" },
+      { image: "/r5.jpeg" },
+      { image: "/r6.jpeg" },
+      { image: "/r7.jpeg" },
+      { image: "/r8.jpeg" },
+      { image: "/r9.jpeg" },
+    ],
+  },
 ];
 
 export default function GalleryPage() {
@@ -42,14 +55,14 @@ export default function GalleryPage() {
           Visual <span className="text-[#1D63B8]">Gallery</span>
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Explore continuous highlights from our chapter's events. Hover to pause or click any photo to view it in high resolution.
+          Explore highlights from our chapter's events. Use the arrow controls or swipe horizontally to view photos.
         </p>
       </div>
 
       {/* Render Event Sections */}
       <div className="space-y-16">
-        {EVENT_GALLERIES.map((section, idx) => (
-          <section key={idx} id={section.id} className="space-y-6 scroll-mt-24">
+        {EVENT_GALLERIES.map((section) => (
+          <section key={section.id} id={section.id} className="space-y-6 scroll-mt-24">
             
             {/* Section Title Header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-800 pb-4 gap-2">
@@ -64,7 +77,7 @@ export default function GalleryPage() {
               </span>
             </div>
 
-            {/* Custom Infinite Loop Marquee Gallery for this Event */}
+            {/* Horizontal Scroll Gallery */}
             <CustomMarqueeGallery items={section.items} />
             
           </section>

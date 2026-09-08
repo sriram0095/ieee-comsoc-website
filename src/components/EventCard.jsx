@@ -46,7 +46,7 @@ export default function EventCard({ event, onViewDetails }) {
       {/* Card Body */}
       <div className="p-6 flex flex-col flex-grow">
         <div className="text-xs text-cyan-400/80 font-mono mb-2">
-          {new Date(event.date).toLocaleDateString("en-US", {
+          {new Date(`${event.date}T00:00:00`).toLocaleDateString("en-US", {
             month: "short",
             day: "numeric",
             year: "numeric",
@@ -72,11 +72,11 @@ export default function EventCard({ event, onViewDetails }) {
           </p>
         </div>
 
-        {/* CTA Button (Converted to button to prevent routing/404 issues) */}
+        {/* CTA Button */}
         <button
           type="button"
           onClick={(e) => {
-            e.stopPropagation(); // Prevents double-triggering parent div click
+            e.stopPropagation();
             onViewDetails();
           }}
           className={`w-full text-center py-2.5 text-xs font-semibold uppercase tracking-wider rounded-xl transition-all ${
