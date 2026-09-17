@@ -115,7 +115,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Outreach", "Communications"],
-    photoUrl: "",
+    photoUrl: "/lohitha.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -196,7 +196,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "",
+    photoUrl: "/aneesh.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
