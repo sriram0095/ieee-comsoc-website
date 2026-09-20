@@ -1,10 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 export default function CustomMarqueeGallery({ items = [] }) {
   const trackRef = useRef(null);
+
+  // Drag state variables
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftPos, setScrollLeftPos] = useState(0);
 
   if (!items || items.length === 0) return null;
 
@@ -18,6 +23,30 @@ export default function CustomMarqueeGallery({ items = [] }) {
     });
   };
 
+  // Mouse Drag Handlers
+  const handleMouseDown = (e) => {
+    if (!trackRef.current) return;
+    setIsMouseDown(true);
+    setStartX(e.pageX - trackRef.current.offsetLeft);
+    setScrollLeftPos(trackRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseDown(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsMouseDown(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isMouseDown || !trackRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - trackRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Drag speed multiplier
+    trackRef.current.scrollLeft = scrollLeftPos - walk;
+  };
+
   return (
     <div 
       className="w-full relative py-4 select-none group/gallery"
@@ -27,7 +56,7 @@ export default function CustomMarqueeGallery({ items = [] }) {
       <button
         onClick={() => scroll("left")}
         aria-label="Scroll left"
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/80 border border-[#1D63B8]/40 text-cyan-400 flex items-center justify-center opacity-0 group-hover/gallery:opacity-100 transition-opacity backdrop-blur-md hover:bg-[#1D63B8] hover:text-white shadow-lg active:scale-95"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/80 border border-[#1D63B8]/40 text-cyan-400 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover/gallery:opacity-100 transition-opacity backdrop-blur-md hover:bg-[#1D63B8] hover:text-white shadow-lg active:scale-95"
       >
         ❮
       </button>
@@ -35,15 +64,21 @@ export default function CustomMarqueeGallery({ items = [] }) {
       <button
         onClick={() => scroll("right")}
         aria-label="Scroll right"
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/80 border border-[#1D63B8]/40 text-cyan-400 flex items-center justify-center opacity-0 group-hover/gallery:opacity-100 transition-opacity backdrop-blur-md hover:bg-[#1D63B8] hover:text-white shadow-lg active:scale-95"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/80 border border-[#1D63B8]/40 text-cyan-400 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover/gallery:opacity-100 transition-opacity backdrop-blur-md hover:bg-[#1D63B8] hover:text-white shadow-lg active:scale-95"
       >
         ❯
       </button>
 
-      {/* Horizontal Scroll Track */}
+      {/* Horizontal Scroll Track with Mouse Drag Logic */}
       <div
         ref={trackRef}
-        className="overflow-x-auto no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing py-2 px-1 flex gap-6"
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        className={`overflow-x-auto no-scrollbar py-2 px-1 flex gap-6 ${
+          isMouseDown ? "cursor-grabbing scroll-auto" : "cursor-grab scroll-smooth"
+        }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {items.map((item, index) => (
@@ -51,7 +86,7 @@ export default function CustomMarqueeGallery({ items = [] }) {
             key={index}
             onContextMenu={(e) => e.preventDefault()}
             onDragStart={(e) => e.preventDefault()}
-            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400 "
+            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400"
           >
             <Image
               src={item.image}
@@ -63,7 +98,7 @@ export default function CustomMarqueeGallery({ items = [] }) {
               className="object-cover transition-transform duration-500 group-hover/card:scale-105 select-none"
             />
 
-            {/* Invisible Shield Overlay to prevent direct right-click or drag */}
+            {/* Invisible Shield Overlay to prevent direct right-click or image drag */}
             <div 
               className="absolute inset-0 z-10 bg-transparent" 
               onContextMenu={(e) => e.preventDefault()}
