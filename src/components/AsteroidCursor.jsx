@@ -84,12 +84,14 @@ export default function AsteroidCursor() {
         ctx.stroke();
 
         // 3. Compact Lead Spark
+        /* 
         ctx.beginPath();
         ctx.arc(points[0].x, points[0].y, 1, 0, Math.PI * 2);
         ctx.fillStyle = "#ffffff";
         ctx.shadowBlur = 4;
         ctx.shadowColor = "#ffffff";
         ctx.fill();
+        */
       }
 
       animationFrameId = requestAnimationFrame(render);

@@ -51,7 +51,7 @@ export default function CustomMarqueeGallery({ items = [] }) {
             key={index}
             onContextMenu={(e) => e.preventDefault()}
             onDragStart={(e) => e.preventDefault()}
-            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400 no-save"
+            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400 "
           >
             <Image
               src={item.image}
