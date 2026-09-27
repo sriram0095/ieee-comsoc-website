@@ -68,8 +68,7 @@ export default function EventsPage() {
           Chapter <span className="text-[#1D63B8]">Events</span>
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Explore technical sessions, workshops, expert talks, and interactive
-          events organized by our chapter. Click any card to view full details.
+          Discover the official programs and gatherings organized by our chapter, bringing together learning, innovation, and industry expertise to empower future leaders.
         </p>
       </div>
 

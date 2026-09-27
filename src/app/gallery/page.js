@@ -55,7 +55,7 @@ export default function GalleryPage() {
           Visual <span className="text-[#1D63B8]">Gallery</span>
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Explore highlights from our chapter's events. Use the arrow controls or swipe horizontally to view photos.
+          Explore memorable highlights and key moments from our chapter's events. Experience our vibrant community in action through our official visual showcase
         </p>
       </div>
 

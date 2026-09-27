@@ -18,7 +18,7 @@ const FACULTY_LEADERSHIP = [
     academicYear: "Advisor",
     bio: "Providing expert mentorship and supporting student chapter milestones.",
     photoUrl: "/Comsoc-Coordinator.jpg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/md-rashid-mahmood-93076742/?isSelfProfile=false" },
   },
   {
     name: "Ms. Manpreet Kaur",
@@ -98,7 +98,7 @@ const EXECUTIVE_COMMITTEE = [
     academicYear: "3rd Year",
     areasOfInterest: ["Chapter Operations"],
     photoUrl: "/srikar12.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/kedareshwar-srikar-bandaru-a45557350/?isSelfProfile=false" },
   },
   {
     name: "S. Rishi",
@@ -116,7 +116,7 @@ const EXECUTIVE_COMMITTEE = [
     academicYear: "3rd Year",
     areasOfInterest: ["Outreach", "Communications"],
     photoUrl: "/lohitha.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/chinni-lohitha-lakshmi-prasanna/?isSelfProfile=false" },
   },
   {
     name: "Muchapotula Prudhvi",
@@ -125,7 +125,7 @@ const EXECUTIVE_COMMITTEE = [
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
     photoUrl: "/prudvi1.jpg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/prudhvi-muchapotula-36619a3b9/?isSelfProfile=false" },
   },
   {
     name: "P.Preethika",
@@ -143,7 +143,7 @@ const EXECUTIVE_COMMITTEE = [
     academicYear: "3rd Year",
     areasOfInterest: ["Reports", "Documentation"],
     photoUrl: "/pardhu.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/naga-pardhu-jana-57bb26396/?isSelfProfile=false" },
   },
   {
     name: "A. Sreemanth",
@@ -170,7 +170,7 @@ const EXECUTIVE_COMMITTEE = [
     academicYear: "3rd Year",
     areasOfInterest: ["Graphics", "UI/UX"],
     photoUrl: "",
-    socials: { linkedin: "https://linkedin.com" },
+    socials: { linkedin: "https://www.linkedin.com/in/achyuth-kumar-buramoni-b0bb35396/?isSelfProfile=false" },
   },
   {
     name: "K. Swaranjali",
