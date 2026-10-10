@@ -41,6 +41,22 @@ const MOCK_EVENTS = [
     posterUrl: "/Techfest.jpeg",
     status: "Completed",
   },
+  {
+    _id: "3",
+    slug: "ieee-comsoc-sbc-gnu-technical-quiz",
+    gallerySlug: "technical-quiz",
+    title: "Technical Quiz Competition",
+    description:
+      "Organized as part of the annual IEEE Day celebrations, Tech Quiz Fiesta '26 was a high-energy technical quiz conducted by the IEEE Communications Society (ComSoc) Student Branch Chapter at Guru Nanak University. The competition challenged participants on core engineering principles, communication technologies, emerging industry trends, and analytical problem-solving, fostering healthy academic competition and technical excellence across campus.",
+    category: "Competition",
+    date: "2026-10-06",
+    startTime: "12:00 PM",
+    endTime: "02:30 PM",
+    venue: "Guru Nanak University, Hyderabad",
+    speaker: {},
+    posterUrl: "/Quiz.png",
+    status: "Completed",
+  },
 ];
 
 export default function EventsPage() {
