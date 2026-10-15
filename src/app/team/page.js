@@ -8,7 +8,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Convenor",
     bio: "Guiding the chapter toward technological excellence, research initiatives, and professional development.",
-    photoUrl: "/Convenor.jpg",
+    photoUrl: "/Team/Convenor.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -17,7 +17,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Advisor",
     bio: "Providing expert mentorship and supporting student chapter milestones.",
-    photoUrl: "/Comsoc-Coordinator.jpg",
+    photoUrl: "/Team/Comsoc-Coordinator.jpg",
     socials: { linkedin: "https://www.linkedin.com/in/md-rashid-mahmood-93076742/?isSelfProfile=false" },
   },
   {
@@ -26,7 +26,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Coordinator",
     bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "/manpreet.jpg",
+    photoUrl: "/Team/manpreet.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -35,7 +35,7 @@ const FACULTY_LEADERSHIP = [
     department: "IEEE ComSoc Student Branch Chapter",
     academicYear: "Coordinator",
     bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "/rajshekar.jpg",
+    photoUrl: "/Team/rajshekar.jpg",
     socials: { linkedin: "https://linkedin.com" },
   },
 ];
@@ -48,7 +48,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Wireless Comms", "5G/6G"],
-    photoUrl: "/Charan1.jpeg",
+    photoUrl: "/Team/Charan1.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
   },
   {
@@ -57,7 +57,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["IoT", "Signal Processing"],
-    photoUrl: "/Vishnu.jpeg",
+    photoUrl: "/Team/Vishnu.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
   },
   {
@@ -66,7 +66,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Computer Networks"],
-    photoUrl: "/mani.jpeg",
+    photoUrl: "/Team/mani.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/sharath-devarala-3881a8406?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
   },
   {
@@ -75,7 +75,7 @@ const CORE_TEAM = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Embedded Systems"],
-    photoUrl: "/thushara.jpeg",
+    photoUrl: "/Team/thushara.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/thushara-mallekedi-706002384/" },
   },
   {
@@ -84,7 +84,7 @@ const CORE_TEAM = [
     department: "CSE",
     academicYear: "3rd Year",
     areasOfInterest: ["Web Dev"],
-    photoUrl: "/Sriram1.jpeg",
+    photoUrl: "/Team/Sriram1.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
   },
 ];
@@ -97,7 +97,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Chapter Operations"],
-    photoUrl: "/srikar12.jpeg",
+    photoUrl: "/Team/srikar12.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/kedareshwar-srikar-bandaru-a45557350/?isSelfProfile=false" },
   },
   {
@@ -106,7 +106,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Financial Planning"],
-    photoUrl: "/rishi1.jpeg",
+    photoUrl: "/Team/rishi1.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -115,7 +115,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Outreach", "Communications"],
-    photoUrl: "/lohitha.jpeg",
+    photoUrl: "/Team/lohitha.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/chinni-lohitha-lakshmi-prasanna/?isSelfProfile=false" },
   },
   {
@@ -124,7 +124,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
-    photoUrl: "/prudvi1.jpg",
+    photoUrl: "/Team/prudvi1.jpg",
     socials: { linkedin: "https://www.linkedin.com/in/prudhvi-muchapotula-36619a3b9/?isSelfProfile=false" },
   },
   {
@@ -133,7 +133,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Student Coordination"],
-    photoUrl: "/Preethika.jpeg",
+    photoUrl: "/Team/Preethika.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -142,7 +142,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "/pardhu.jpeg",
+    photoUrl: "/Team/pardhu.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/naga-pardhu-jana-57bb26396/?isSelfProfile=false" },
   },
   {
@@ -151,7 +151,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "/srimanth1.jpeg",
+    photoUrl: "/Team/srimanth1.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -160,7 +160,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Workshops", "Coding"],
-    photoUrl: "/sandeep.jpeg",
+    photoUrl: "/Team/sandeep.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -169,7 +169,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Graphics", "UI/UX"],
-    photoUrl: "",
+    photoUrl: "/Team/achyuth.jpeg",
     socials: { linkedin: "https://www.linkedin.com/in/achyuth-kumar-buramoni-b0bb35396/?isSelfProfile=false" },
   },
   {
@@ -178,7 +178,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Graphics", "UI/UX"],
-    photoUrl: "/swaranjali.jpeg",
+    photoUrl: "/Team/swaranjali.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -187,7 +187,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "/anusha.jpeg",
+    photoUrl: "/Team/anusha.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -196,7 +196,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "/aneesh.jpeg",
+    photoUrl: "/Team/aneesh.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
@@ -205,7 +205,7 @@ const EXECUTIVE_COMMITTEE = [
     department: "ECE",
     academicYear: "3rd Year",
     areasOfInterest: ["Event Management"],
-    photoUrl: "/Gayathri.jpeg",
+    photoUrl: "/Team/Gayathri.jpeg",
     socials: { linkedin: "https://linkedin.com" },
   },
   {
