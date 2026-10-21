@@ -39,6 +39,21 @@ const EVENT_GALLERIES = [
       { image: "/RW/r9.jpeg" },
     ],
   },
+  {
+    id: "technical-quiz",
+    eventTitle: "Technical Quiz 2026",
+    eventDate: "October 06, 2026",
+    items: [
+      { image: "/TQ/1.jpeg"},
+      { image: "/TQ/2.jpeg"},
+      { image: "/TQ/3.jpeg"},
+      { image: "/TQ/4.jpeg"},
+      { image: "/TQ/5.jpeg"},
+      { image: "/TQ/6.jpeg"},
+      { image: "/TQ/7.jpeg"},
+      { image: "/TQ/8.jpeg"},
+    ],
+  },
 ];
 
 export default function GalleryPage() {
