@@ -1,223 +1,9 @@
 import TeamCard from "@/components/TeamCard";
+import { FACULTY_LEADERSHIP, CORE_TEAM, EXECUTIVE_COMMITTEE } from "@/data/teamData";
 
-// 1. Faculty Leadership Section
-const FACULTY_LEADERSHIP = [
-  {
-    name: "Dr. Harpreet Kaur",
-    role: "IEEE ComSoc Convenor",
-    department: "IEEE ComSoc Student Branch Chapter",
-    academicYear: "Convenor",
-    bio: "Guiding the chapter toward technological excellence, research initiatives, and professional development.",
-    photoUrl: "/Team/Convenor.jpg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "Dr. Md Rashid Mahmood",
-    role: "IEEE ComSoc Advisor",
-    department: "IEEE ComSoc Student Branch Chapter",
-    academicYear: "Advisor",
-    bio: "Providing expert mentorship and supporting student chapter milestones.",
-    photoUrl: "/Team/Comsoc-Coordinator.jpg",
-    socials: { linkedin: "https://www.linkedin.com/in/md-rashid-mahmood-93076742/?isSelfProfile=false" },
-  },
-  {
-    name: "Ms. Manpreet Kaur",
-    role: "ECE Coordinator",
-    department: "IEEE ComSoc Student Branch Chapter",
-    academicYear: "Coordinator",
-    bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "/Team/manpreet.jpg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "Mr. Sunkari Rajasheker",
-    role: "ECE Coordinator",
-    department: "IEEE ComSoc Student Branch Chapter",
-    academicYear: "Coordinator",
-    bio: "Coordinating departmental activities and supporting student engagement in ECE initiatives.",
-    photoUrl: "/Team/rajshekar.jpg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-];
-
-// 2. Core Team Section
-const CORE_TEAM = [
-  {
-    name: "Sai Charan Tiruveedhula",
-    role: "Chair",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Wireless Comms", "5G/6G"],
-    photoUrl: "/Team/Charan1.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/sai-charan-tiruveedhula-b2499429a/", github: "https://github.com" },
-  },
-  {
-    name: "Vishnu Reddy Karla",
-    role: "Vice Chair",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["IoT", "Signal Processing"],
-    photoUrl: "/Team/Vishnu.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/karla-vishnu-vardhan-reddy-7b720138b/" },
-  },
-  {
-    name: "Mani Sharath Devarala",
-    role: "Secretary",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Computer Networks"],
-    photoUrl: "/Team/mani.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/sharath-devarala-3881a8406?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
-  },
-  {
-    name: "Thushara Mallekedi",
-    role: "Treasurer",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Embedded Systems"],
-    photoUrl: "/Team/thushara.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/thushara-mallekedi-706002384/" },
-  },
-  {
-    name: "Sriram Govindu",
-    role: "Webmaster",
-    department: "CSE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Web Dev"],
-    photoUrl: "/Team/Sriram1.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/govindu-sri-ram-2164b532b/", github: "https://github.com/sriram0095" },
-  },
-];
-
-// 3. Executive Committee Section (Remaining Members from PDF)
-const EXECUTIVE_COMMITTEE = [
-  {
-    name: "B.K. Srikar",
-    role: "General Secretary",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Chapter Operations"],
-    photoUrl: "/Team/srikar12.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/kedareshwar-srikar-bandaru-a45557350/?isSelfProfile=false" },
-  },
-  {
-    name: "S. Rishi",
-    role: "Joint Treasurer",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Financial Planning"],
-    photoUrl: "/Team/rishi1.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "Ch. Lohitha",
-    role: "Public Relations (PR)",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Outreach", "Communications"],
-    photoUrl: "/Team/lohitha.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/chinni-lohitha-lakshmi-prasanna/?isSelfProfile=false" },
-  },
-  {
-    name: "Muchapotula Prudhvi",
-    role: "Student Representative",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Student Coordination"],
-    photoUrl: "/Team/prudvi1.jpg",
-    socials: { linkedin: "https://www.linkedin.com/in/prudhvi-muchapotula-36619a3b9/?isSelfProfile=false" },
-  },
-  {
-    name: "P.Preethika",
-    role: "Student Representative",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Student Coordination"],
-    photoUrl: "/Team/Preethika.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "J. Naga Pardhu",
-    role: "Documentation Head",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "/Team/pardhu.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/naga-pardhu-jana-57bb26396/?isSelfProfile=false" },
-  },
-  {
-    name: "A. Sreemanth",
-    role: "Documentation Head",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Reports", "Documentation"],
-    photoUrl: "/Team/srimanth1.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "Ch. Sandeep",
-    role: "Technical Lead",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Workshops", "Coding"],
-    photoUrl: "/Team/sandeep.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "B. Achyuth",
-    role: "Design Lead",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Graphics", "UI/UX"],
-    photoUrl: "/Team/achyuth.jpeg",
-    socials: { linkedin: "https://www.linkedin.com/in/achyuth-kumar-buramoni-b0bb35396/?isSelfProfile=false" },
-  },
-  {
-    name: "K. Swaranjali",
-    role: "Design Lead",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Graphics", "UI/UX"],
-    photoUrl: "/Team/swaranjali.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "B. Anusha",
-    role: "Membership Recruiter",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "/Team/anusha.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "K. Aneesh",
-    role: "Membership Recruiter",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Acquisition", "Engagement"],
-    photoUrl: "/Team/aneesh.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "K. Gayathri",
-    role: "Discipline Lead",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Event Management"],
-    photoUrl: "/Team/Gayathri.jpeg",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-  {
-    name: "J.Pranav",
-    role: "Publicity & Social Media",
-    department: "ECE",
-    academicYear: "3rd Year",
-    areasOfInterest: ["Social Media", "Marketing"],
-    photoUrl: "",
-    socials: { linkedin: "https://linkedin.com" },
-  },
-];
+// Fallback arrays to prevent crashes if external arrays are undefined
+const SAFE_CORE_TEAM = typeof CORE_TEAM !== "undefined" && Array.isArray(CORE_TEAM) ? CORE_TEAM : [];
+const SAFE_EXEC_COMMITTEE = typeof EXECUTIVE_COMMITTEE !== "undefined" && Array.isArray(EXECUTIVE_COMMITTEE) ? EXECUTIVE_COMMITTEE : [];
 
 export default function TeamPage() {
   return (
@@ -226,51 +12,57 @@ export default function TeamPage() {
       {/* Page Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1D63B8]/10 border border-[#1D63B8]/30 text-[#1D63B8] text-xs font-semibold mb-4">
-  IEEE Student Branch - STB60237593
-</div>
+          IEEE Student Branch - STB60237593
+        </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
-  Chapter <span className="text-[#1D63B8]">Leadership</span>
-</h1>
+          Chapter <span className="text-[#1D63B8]">Leadership</span>
+        </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
           Meet the faculty advisors, core student leaders, and executive committee members driving our chapter forward.
         </p>
       </div>
 
       {/* Section 1: Faculty Leadership */}
-      <section className="mb-20">
-        <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
-          Faculty Leadership
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-18 max-w-3xl mx-auto">
-          {FACULTY_LEADERSHIP.map((member, idx) => (
-            <TeamCard key={idx} member={member} />
-          ))}
-        </div>
-      </section>
+      {Array.isArray(FACULTY_LEADERSHIP) && FACULTY_LEADERSHIP.length > 0 && (
+        <section className="mb-20">
+          <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
+            Faculty Leadership
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {FACULTY_LEADERSHIP.map((member, idx) => (
+              <TeamCard key={member?.id || member?.name || idx} member={member} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Section 2: Core Team */}
-      <section className="mb-20">
-        <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
-          Core Team
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CORE_TEAM.map((member, idx) => (
-            <TeamCard key={idx} member={member} />
-          ))}
-        </div>
-      </section>
+      {SAFE_CORE_TEAM.length > 0 && (
+        <section className="mb-20">
+          <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
+            Core Team
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {SAFE_CORE_TEAM.map((member, idx) => (
+              <TeamCard key={member?.id || member?.name || idx} member={member} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Section 3: Executive Committee */}
-      <section>
-        <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
-          Executive Committee
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {EXECUTIVE_COMMITTEE.map((member, idx) => (
-            <TeamCard key={idx} member={member} />
-          ))}
-        </div>
-      </section>
+      {SAFE_EXEC_COMMITTEE.length > 0 && (
+        <section>
+          <h2 className="text-xl font-bold text-white mb-8 text-center border-b border-slate-800 pb-4">
+            Executive Committee
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {SAFE_EXEC_COMMITTEE.map((member, idx) => (
+              <TeamCard key={member?.id || member?.name || idx} member={member} />
+            ))}
+          </div>
+        </section>
+      )}
 
     </div>
   );

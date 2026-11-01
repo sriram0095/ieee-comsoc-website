@@ -44,19 +44,22 @@ const EVENT_GALLERIES = [
     eventTitle: "Technical Quiz 2026",
     eventDate: "October 06, 2026",
     items: [
-      { image: "/TQ/1.jpeg"},
-      { image: "/TQ/2.jpeg"},
-      { image: "/TQ/3.jpeg"},
-      { image: "/TQ/4.jpeg"},
-      { image: "/TQ/5.jpeg"},
-      { image: "/TQ/6.jpeg"},
-      { image: "/TQ/7.jpeg"},
-      { image: "/TQ/8.jpeg"},
+      { image: "/TQ/1.jpeg" },
+      { image: "/TQ/2.jpeg" },
+      { image: "/TQ/3.jpeg" },
+      { image: "/TQ/4.jpeg" },
+      { image: "/TQ/5.jpeg" },
+      { image: "/TQ/6.jpeg" },
+      { image: "/TQ/7.jpeg" },
+      { image: "/TQ/8.jpeg" },
     ],
   },
 ];
 
 export default function GalleryPage() {
+  // Defensive array fallback
+  const safeGalleries = Array.isArray(EVENT_GALLERIES) ? EVENT_GALLERIES : [];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       
@@ -76,27 +79,47 @@ export default function GalleryPage() {
 
       {/* Render Event Sections */}
       <div className="space-y-16">
-        {EVENT_GALLERIES.map((section) => (
-          <section key={section.id} id={section.id} className="space-y-6 scroll-mt-24">
-            
-            {/* Section Title Header */}
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-800 pb-4 gap-2">
-              <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                  {section.eventTitle}
-                </h2>
-              </div>
-              <span className="text-xs font-mono text-cyan-400/80">
-                {section.eventDate}
-              </span>
-            </div>
+        {safeGalleries.map((section, idx) => {
+          // Filter out invalid items before passing to gallery component
+          const validItems = Array.isArray(section?.items)
+            ? section.items.filter(
+                (item) =>
+                  item &&
+                  typeof item.image === "string" &&
+                  item.image.trim() !== ""
+              )
+            : [];
 
-            {/* Horizontal Scroll Gallery */}
-            <CustomMarqueeGallery items={section.items} />
-            
-          </section>
-        ))}
+          return (
+            <section
+              key={section?.id || `gallery-section-${idx}`}
+              id={section?.id}
+              className="space-y-6 scroll-mt-24"
+            >
+              {/* Section Title Header */}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-800 pb-4 gap-2">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    {section?.eventTitle || "Chapter Event"}
+                  </h2>
+                </div>
+                <span className="text-xs font-mono text-cyan-400/80">
+                  {section?.eventDate || ""}
+                </span>
+              </div>
+
+              {/* Horizontal Scroll Gallery */}
+              {validItems.length > 0 ? (
+                <CustomMarqueeGallery items={validItems} />
+              ) : (
+                <div className="py-8 text-center text-slate-600 text-xs font-semibold">
+                  NO GALLERY IMAGES FOR THIS EVENT
+                </div>
+              )}
+            </section>
+          );
+        })}
       </div>
 
     </div>

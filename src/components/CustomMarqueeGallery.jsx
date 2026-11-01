@@ -81,50 +81,66 @@ export default function CustomMarqueeGallery({ items = [] }) {
         }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            onContextMenu={(e) => e.preventDefault()}
-            onDragStart={(e) => e.preventDefault()}
-            className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400"
-          >
-            <Image
-              src={item.image}
-              alt={item.label || "Gallery image"}
-              fill
-              sizes="(max-width: 768px) 280px, 360px"
-              priority={index < 3}
-              draggable={false}
-              className="object-cover transition-transform duration-500 group-hover/card:scale-105 select-none"
-            />
+        {items.map((item, index) => {
+          // Defensive validation for image URL
+          const validImageSrc =
+            item?.image &&
+            typeof item.image === "string" &&
+            item.image.trim() !== ""
+              ? item.image
+              : null;
 
-            {/* Invisible Shield Overlay to prevent direct right-click or image drag */}
-            <div 
-              className="absolute inset-0 z-10 bg-transparent" 
+          return (
+            <div
+              key={item?.id || index}
               onContextMenu={(e) => e.preventDefault()}
               onDragStart={(e) => e.preventDefault()}
-            />
+              className="relative min-w-[280px] sm:min-w-[360px] h-[220px] sm:h-[260px] rounded-2xl overflow-hidden border border-[#1D63B8]/30 bg-white/[0.02] backdrop-blur-md shadow-xl flex-shrink-0 group/card transition-all duration-300 hover:border-cyan-400 flex items-center justify-center"
+            >
+              {validImageSrc ? (
+                <Image
+                  src={validImageSrc}
+                  alt={item?.label || "Gallery image"}
+                  fill
+                  sizes="(max-width: 768px) 280px, 360px"
+                  priority={index < 3}
+                  draggable={false}
+                  className="object-cover transition-transform duration-500 group-hover/card:scale-105 select-none"
+                />
+              ) : (
+                <span className="text-slate-600 text-xs font-semibold select-none">
+                  IMAGE UNAVAILABLE
+                </span>
+              )}
 
-            {(item.label || item.tag) && (
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020611]/90 via-transparent to-transparent pointer-events-none" />
-            )}
+              {/* Invisible Shield Overlay to prevent direct right-click or image drag */}
+              <div 
+                className="absolute inset-0 z-10 bg-transparent" 
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              />
 
-            {(item.label || item.tag) && (
-              <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col items-start pointer-events-none">
-                {item.tag && (
-                  <span className="text-[10px] font-semibold bg-[#1D63B8]/30 text-cyan-300 px-2 py-0.5 rounded-md border border-[#1D63B8]/40 uppercase tracking-widest mb-1">
-                    {item.tag}
-                  </span>
-                )}
-                {item.label && (
-                  <h3 className="text-white font-semibold text-sm sm:text-base tracking-wide truncate w-full">
-                    {item.label}
-                  </h3>
-                )}
-              </div>
-            )}
-          </div>
-        ))}
+              {(item?.label || item?.tag) && (
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020611]/90 via-transparent to-transparent pointer-events-none" />
+              )}
+
+              {(item?.label || item?.tag) && (
+                <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col items-start pointer-events-none">
+                  {item?.tag && (
+                    <span className="text-[10px] font-semibold bg-[#1D63B8]/30 text-cyan-300 px-2 py-0.5 rounded-md border border-[#1D63B8]/40 uppercase tracking-widest mb-1">
+                      {item.tag}
+                    </span>
+                  )}
+                  {item?.label && (
+                    <h3 className="text-white font-semibold text-sm sm:text-base tracking-wide truncate w-full">
+                      {item.label}
+                    </h3>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
